@@ -1,0 +1,94 @@
+{
+  "id": "002",
+  "date": "2026-10-26",
+  "season": "가을",
+  "title": "비 안 오는 날엔 숏트렌치",
+  "headline": "베이지와 브라운,\n톤 하나로 끝낸 날.",
+  "summary": "크림 니트에 연청 부츠컷, 브라운 로퍼까지. 숏트렌치 하나로 완성한 톤온톤 카페룩.",
+  "description": "크림 니트에 연청 부츠컷, 로퍼까지 베이지랑 브라운으로만 맞춰서 톤 하나로 끝냈어요. 카페 가는 날 딱 이 느낌. 톤온톤이 좋아요, 아니면 포인트 컬러 하나 넣는 게 좋아요?",
+  "tags": [
+    "카페",
+    "주말",
+    "산책"
+  ],
+  "weather": {
+    "temp": "12–19°C",
+    "note": "맑고 선선한 날"
+  },
+  "palette": [
+    [
+      "크림",
+      "#f3ece1"
+    ],
+    [
+      "베이지",
+      "#cdb08a"
+    ],
+    [
+      "브라운",
+      "#6b4a33"
+    ],
+    [
+      "연청",
+      "#a9bdd3"
+    ]
+  ],
+  "instagram": "https://www.instagram.com/p/De7K4gZEzcg/",
+  "cover": "img/ep002/1-s.webp",
+  "sets": [
+    {
+      "name": "숏트렌치 톤온톤",
+      "mood": "카페 가는 날",
+      "image": "img/ep002/1.webp",
+      "alt": "베이지 숏트렌치와 크림 니트, 연청 부츠컷을 입은 윤서의 거울 셀카",
+      "extra": [
+        {
+          "image": "img/ep002/2.webp",
+          "alt": "은행잎이 깔린 한옥 골목을 걷는 윤서"
+        },
+        {
+          "image": "img/ep002/3.webp",
+          "alt": "카페 창가 자리에 앉은 윤서"
+        }
+      ],
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "하이넥 벨트 숏트렌치",
+          "color": "베이지",
+          "url": "https://applink.a-bly.com/6uu5rmj"
+        },
+        {
+          "cat": "니트",
+          "name": "브이넥 루즈 니트",
+          "color": "크림",
+          "url": "https://applink.a-bly.com/dt48sqt"
+        },
+        {
+          "cat": "데님",
+          "name": "하이웨스트 부츠컷 데님",
+          "color": "연청",
+          "url": "https://applink.a-bly.com/petkc2q"
+        },
+        {
+          "cat": "슈즈",
+          "name": "라무드 소가죽 스퀘어 페니 로퍼",
+          "color": "브라운",
+          "url": "https://applink.a-bly.com/58hxfnw"
+        },
+        {
+          "cat": "가방",
+          "name": "셔링 스웨이드 숄더백",
+          "color": "커피",
+          "url": "https://applink.a-bly.com/9qr6syh"
+        },
+        {
+          "cat": "주얼리",
+          "name": "진주 귀걸이 8mm",
+          "color": "",
+          "url": "https://applink.a-bly.com/nr4b3pc"
+        }
+      ]
+    }
+  ]
+}
