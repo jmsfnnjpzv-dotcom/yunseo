@@ -20,7 +20,7 @@ function toast(msg, ms = 1800) {
   clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('on'), ms);
 }
 
-// 복사한 글도 첫 줄에 광고 표시가 오게 한다 (에이블리 정책: 본문 첫 줄)
+// 복사한 글(다른 곳에 붙여 넣는 글)은 첫 줄에 에이블리 광고 문구를 둔다. 화면에는 나오지 않음
 async function copyAll(look) {
   const lines = [AD, '', `윤서의 룩북 EP.${look.id} · ${look.title}`, ''];
   for (const s of look.sets) {
@@ -131,11 +131,10 @@ fetch(`data/looks/${ep}.json`).then(r => { if (!r.ok) throw 0; return r.json(); 
   const total = look.sets.reduce((n, s) => n + s.items.length, 0);
   const multi = look.sets.length > 1;
 
-  // 본문 첫 줄은 에이블리가 정한 광고 문구 그대로. 머리는 짧게 두고 첫 화면은 사진에 양보한다
+  // 머리는 짧게 두고 첫 화면은 사진에 양보한다
   // (날씨·색·태그·글 같은 칸은 JSON에 없어도 그 줄만 빠지고 화면은 그대로 나온다)
   const w = look.weather;
   main.append(
-    h('p', { class: 'ad-top', text: AD }),
     h('header', { class: 'look-head' },
       h('p', { class: 'eyebrow', text: [`EP.${look.id}`, fmtDate(look.date)].filter(Boolean).join(' · ') }),
       h('h1', { text: look.headline || look.title }),
@@ -143,14 +142,13 @@ fetch(`data/looks/${ep}.json`).then(r => { if (!r.ok) throw 0; return r.json(); 
       multi ? h('nav', { class: 'toc', 'aria-label': '룩 바로가기' },
         ...look.sets.map((s, i) => h('a', { href: `#set-${i + 1}`, text: s.name }))) : null));
 
-  // 룩마다 사진 → 이름 → 그 룩의 아이템. 목록 머리에도 광고·AI 표시를 둬서 바로 내려와도 보이게
+  // 룩마다 사진 → 이름 → 그 룩의 아이템. 목록 머리마다 '(광고) 제휴 링크' 표시 하나
   const boxes = look.sets.map((s, i) => {
     const imgs = [{ image: s.image, alt: s.alt }, ...(s.extra || [])];
     const items = h('div', { class: 'set-items', id: i === 0 ? 'items' : `items-${i + 1}` },
       h('div', { class: 'set-head' },
         h('p', { class: 'set-count', text: multi ? `${lookNo(s, i)} 아이템 ${s.items.length}` : `아이템 ${s.items.length}` }),
         h('span', { class: 'ad-tag', text: '(광고) 제휴 링크' })),
-      h('p', { class: 'items-warn', text: '사진은 AI 이미지라 실물과 다를 수 있어요.' }),
       itemList(s));
     const sec = h('section', { class: 'set', id: `set-${i + 1}` },
       gallery(imgs, s.name, i === 0),
@@ -169,7 +167,6 @@ fetch(`data/looks/${ep}.json`).then(r => { if (!r.ok) throw 0; return r.json(); 
   toBook(more);
   const end = h('section', { class: 'end' },
     h('button', { type: 'button', class: 'btn ghost', id: 'copy', text: `아이템 링크 ${total}개 전체 복사` }),
-    h('p', { class: 'end-note', text: '메모나 친구에게 보내기 좋게 링크를 한 번에 복사해요. 복사한 글 첫 줄에 광고 표시가 들어가요.' }),
     more);
   main.append(h('div', { class: 'outro' },
     h('section', { class: 'memo' },
