@@ -110,7 +110,7 @@ function itemList(s) {
 
 // 룩북(홈)에서 들어왔으면 '← 룩북'·'다른 룩 보러 가기'는 뒤로 가기로: 고른 칩과 스크롤 위치가 그대로 남는다
 const ref = document.referrer ? new URL(document.referrer) : null;
-const fromBook = ref && ref.origin === location.origin && !ref.pathname.endsWith('look.html');
+const fromBook = ref && ref.origin === location.origin && !ref.pathname.endsWith('look.html') && history.length > 1; // 새 탭으로 열었으면 돌아갈 기록이 없으니 그냥 링크로
 const toBook = a => { if (fromBook) a.onclick = e => { e.preventDefault(); history.back(); }; };
 toBook($('.back'));
 
@@ -191,7 +191,9 @@ fetch(`data/looks/${ep}.json`).then(r => { if (!r.ok) throw 0; return r.json(); 
     let i = 0;
     boxes.forEach((b, n) => { if (b.sec.getBoundingClientRect().top <= innerHeight / 2) i = n; });
     setDock(i);
-    const away = end.getBoundingClientRect().top < innerHeight - 40;
+    // 그 룩의 아이템 목록이 이미 보이면(눌러도 그 자리) 또는 끝 구역이 보이면 버튼을 내린다
+    const r = boxes[i].items.getBoundingClientRect();
+    const away = end.getBoundingClientRect().top < innerHeight - 40 || (r.top < innerHeight - 90 && r.bottom > 90);
     dock.classList.toggle('away', away); dock.inert = away;
   };
   let raf = 0;
