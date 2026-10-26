@@ -61,6 +61,7 @@ loadLooks().then(looks => {
   };
   for (const tag of all) {
     const n = tag === '전체' ? looks.length : counts[tag];
+    if (!n && tag !== '전체') continue; // 아직 룩이 없는 상황은 칩을 숨긴다 (눌러도 빈 화면만 나와서)
     const b = h('button', { type: 'button', class: n ? 'chip' : 'chip dim', 'data-tag': tag }, tag, h('small', { text: String(n) }));
     b.onclick = () => { current = tag; apply(); };
     chips.append(b);
