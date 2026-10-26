@@ -1,16 +1,39 @@
-// 룩 목록: data/looks/001.json, 002.json ... 을 순서대로 찾아 불러옵니다.
-// 새 룩 추가 = 다음 번호의 JSON 하나 + 이미지 폴더만 추가하면 끝.
-const SITUATIONS = ['카페', '데이트', '주말', '산책', '하객', '저녁약속', '여행'];
+// 룩북: data/looks/001.json, 002.json ... 을 순서대로 찾아 불러와 룩(세트)마다 카드 하나로 보여 줍니다.
+// 새 룩 추가 = 다음 번호의 JSON 하나 + 이미지 폴더만 추가하면 끝. 위쪽 '룩 지도'(상황·컬러·아이템)는 JSON에서 저절로 만들어집니다.
+const SITUATIONS = { 출근: '💼', 카페: '☕', 데이트: '💐', 주말: '🧺', 산책: '🍂', 저녁약속: '🍷', 하객: '🎀', 여행: '🧳' };
+const ITEMS = ['아우터', '가디건', '니트', '블라우스', '셔츠', '티셔츠', '원피스', '스커트', '데님', '팬츠', '슈즈', '가방', '머플러', '주얼리'];
+// 아이템의 색 이름 → 지도의 색 묶음: [묶음 이름, 견본색, 이 묶음에 드는 색 이름]. 새 색이 나오면 여기에 더한다
+const COLORS = [
+  ['화이트·크림', '#f4efe6', ['화이트', '아이보리', '크림']],
+  ['베이지', '#cdb08a', ['베이지', '카멜', '샌드']],
+  ['브라운', '#6b4a33', ['브라운', '커피', '모카', '초코']],
+  ['블루', '#9fb6d0', ['연청', '중청', '진청', '블루', '스카이']],
+  ['크랜베리·버건디', '#7d2638', ['크랜베리', '버건디', '와인', '레드']],
+  ['블랙·차콜', '#2f2b29', ['블랙', '차콜', '그레이']],
+];
+const familyOf = c => COLORS.find(f => f[2].includes(c))?.[0];
 const pad = n => String(n).padStart(3, '0');
+const fmtDate = d => (d ? d.slice(5).replace('-', '.') : '');
+const rank = (list, v) => { const i = list.indexOf(v); return i < 0 ? 99 : i; };
+const iga = w => ((w.charCodeAt(w.length - 1) - 0xac00) % 28 ? '이' : '가'); // 받침 있으면 '이'
+
+// 없는 번호(404)는 목록의 끝, 그 밖의 실패는 오류로 본다
+async function getLook(n) {
+  try {
+    const r = await fetch(`data/looks/${pad(n)}.json`);
+    if (r.status === 404) return { missing: true };
+    if (!r.ok) return { error: true };
+    return { look: await r.json() };
+  } catch { return { error: true }; }
+}
 
 async function loadLooks() {
   const looks = [];
   for (let start = 1; ; start += 6) {
-    const batch = await Promise.all([0, 1, 2, 3, 4, 5].map(i =>
-      fetch(`data/looks/${pad(start + i)}.json`).then(r => r.ok ? r.json() : null).catch(() => null)));
-    const ok = batch.filter(Boolean);
-    looks.push(...ok);
-    if (ok.length < batch.length) break;
+    const batch = await Promise.all([0, 1, 2, 3, 4, 5].map(i => getLook(start + i)));
+    if (batch.some(b => b.error)) throw new Error('load');
+    looks.push(...batch.filter(b => b.look).map(b => b.look));
+    if (batch.some(b => b.missing)) break;
   }
   return looks.sort((a, b) => b.id.localeCompare(a.id));
 }
@@ -24,47 +47,131 @@ function h(tag, attrs = {}, ...kids) {
   return el;
 }
 
-function card(look, eager) {
-  const items = look.sets.reduce((n, s) => n + s.items.length, 0);
-  const href = `look.html?ep=${look.id}`;
-  const img = h('img', { src: look.cover, alt: look.title, width: 480, height: 640, loading: eager ? 'eager' : 'lazy', decoding: 'async' });
-  return h('article', { class: 'card', 'data-tags': look.tags.join(',') },
-    h('a', { class: 'card-img', href },
-      img,
-      h('span', { class: 'ep', text: `EP.${look.id}` }),
-      look.sets.length > 1 ? h('span', { class: 'multi', text: `${look.sets.length} LOOKS` }) : null),
-    h('div', { class: 'card-body' },
-      h('p', { class: 'weather', text: `🌤 ${look.weather.temp} · ${look.weather.note}` }),
-      h('h3', {}, h('a', { href, text: look.title })),
-      h('p', { class: 'summary', text: look.summary }),
-      h('div', { class: 'tags' }, ...look.tags.map(t => h('span', { text: '#' + t }))),
-      h('a', { class: 'btn solid small', href, text: `아이템 ${items}개 보기 →` })));
+// EP 하나를 룩(세트) 단위로 펼친다. 지도에서 쓰는 열쇠: '상황:카페', '컬러:브라운', '아이템:아우터'
+function looksOf(ep) {
+  const multi = ep.sets.length > 1;
+  return ep.sets.map((s, i) => {
+    const keys = new Set((s.tags || ep.tags || []).map(t => '상황:' + t));
+    for (const it of s.items) {
+      if (it.cat) keys.add('아이템:' + it.cat);
+      const f = familyOf(it.color); if (f) keys.add('컬러:' + f);
+    }
+    const page = `look.html?ep=${ep.id}`;
+    return {
+      ep, s, keys, id: `${ep.id}-${i + 1}`,
+      badge: multi ? `EP.${ep.id} · ${s.name.split('·')[0].trim()}` : `EP.${ep.id}`,
+      title: s.name.split('·').pop().trim(), // 상세에서 사진 아래 붙는 룩 이름과 같게
+      href: `${page}#set-${i + 1}`, // 사진·이름 → 그 룩의 사진
+      itemsHref: `${page}#${i === 0 ? 'items' : `items-${i + 1}`}`, // '아이템 N개 보기' → 그 룩의 아이템 목록
+      thumb: i === 0 ? ep.cover : s.image.replace(/(\.\w+)$/, '-s$1'),
+    };
+  });
 }
 
-loadLooks().then(looks => {
-  const grid = document.getElementById('grid');
-  document.getElementById('count').textContent = looks.length;
-  looks.forEach((l, i) => grid.append(card(l, i < 2)));
+function card(l, n) {
+  const img = h('img', { src: l.thumb, alt: l.s.alt, width: 480, height: 640, loading: n < 4 ? 'eager' : 'lazy', decoding: 'async' });
+  img.onerror = () => { img.onerror = null; img.src = l.s.image; }; // 썸네일이 없으면 큰 사진으로
+  const match = h('p', { class: 'match', hidden: '' });
+  const el = h('article', { class: 'card', style: `--i:${n};view-transition-name:look-${l.id}` },
+    h('a', { class: 'card-img', href: l.href, tabindex: '-1', 'aria-hidden': 'true' },
+      img, h('span', { class: 'ep', text: l.badge }), h('span', { class: 'ai-tag', text: 'AI 이미지' })),
+    h('div', { class: 'card-body' },
+      h('p', { class: 'meta', text: [fmtDate(l.ep.date), l.ep.weather && `🌤 ${l.ep.weather.temp}`].filter(Boolean).join(' · ') }),
+      h('h3', {}, h('a', { href: l.href, text: l.title })),
+      l.s.mood ? h('p', { class: 'mood', text: l.s.mood }) : null,
+      match,
+      h('span', { class: 'grow' }),
+      h('a', { class: 'btn solid small', href: l.itemsHref, text: `아이템 ${l.s.items.length}개 보기` })));
+  return { el, match, l };
+}
 
-  const counts = Object.fromEntries(SITUATIONS.map(s => [s, looks.filter(l => l.tags.includes(s)).length]));
-  const chips = document.getElementById('chips');
-  const all = ['전체', ...SITUATIONS];
-  let current = '전체';
-  const apply = () => {
-    let shown = 0;
-    for (const c of grid.children) {
-      const on = current === '전체' || c.dataset.tags.split(',').includes(current);
-      c.hidden = !on; if (on) shown++;
-    }
-    document.getElementById('empty').hidden = shown > 0;
-    for (const b of chips.children) b.setAttribute('aria-pressed', String(b.dataset.tag === current));
-  };
-  for (const tag of all) {
-    const n = tag === '전체' ? looks.length : counts[tag];
-    if (!n && tag !== '전체') continue; // 아직 룩이 없는 상황은 칩을 숨긴다 (눌러도 빈 화면만 나와서)
-    const b = h('button', { type: 'button', class: n ? 'chip' : 'chip dim', 'data-tag': tag }, tag, h('small', { text: String(n) }));
-    b.onclick = () => { current = tag; apply(); };
-    chips.append(b);
+// 룩 지도: 상황·컬러·아이템 묶음마다 칩 한 줄. 룩이 하나도 없거나 모든 룩에 다 있는 칩(눌러도 그대로)은 만들지 않는다
+function buildMap(looks, onPick) {
+  const has = new Set(looks.flatMap(l => [...l.keys]));
+  const count = k => looks.filter(l => l.keys.has(k)).length;
+  const useful = (g, v) => count(`${g}:${v}`) < looks.length;
+  const vals = (g, order) => [...has].filter(k => k.startsWith(g + ':')).map(k => k.slice(g.length + 1))
+    .sort((a, b) => rank(order, a) - rank(order, b));
+  const groups = [
+    ['상황', vals('상황', Object.keys(SITUATIONS)), v => (SITUATIONS[v] ? h('span', { 'aria-hidden': 'true', text: SITUATIONS[v] }) : null)],
+    ['컬러', COLORS.map(c => c[0]).filter(v => has.has('컬러:' + v)), v => h('i', { style: `background:${COLORS.find(c => c[0] === v)[1]}` })],
+    ['아이템', vals('아이템', ITEMS), () => null],
+  ];
+  const map = document.getElementById('map');
+  const chips = [];
+  map.append(h('p', { class: 'map-title' }, '룩 지도', h('small', { text: '누르면 그런 룩만 모아 보여 줘요' })));
+  for (const [g, all, mark] of groups) {
+    const list = all.filter(v => useful(g, v));
+    if (!list.length) continue;
+    map.append(h('div', { class: 'map-group', role: 'group', 'aria-label': g },
+      h('h3', { text: g }),
+      h('div', { class: 'map-chips' }, ...list.map(v => {
+        const b = h('button', { type: 'button', class: 'chip', 'data-key': `${g}:${v}`, 'aria-pressed': 'false' },
+          mark(v), v, h('small', { text: String(count(`${g}:${v}`)) }));
+        b.onclick = () => onPick(b.dataset.key);
+        chips.push(b);
+        return b;
+      }))));
   }
-  apply();
-}).catch(() => { document.getElementById('grid').textContent = '룩을 불러오지 못했어요. 새로고침해 주세요.'; });
+  return chips;
+}
+
+function render(eps) {
+  const looks = eps.flatMap(looksOf);
+  const cards = looks.map(card);
+  const grid = document.getElementById('grid');
+  grid.replaceChildren(...cards.map(c => c.el));
+  grid.classList.add('intro');
+  setTimeout(() => grid.classList.remove('intro'), 1200);
+
+  const title = document.getElementById('result-title');
+  const count = document.getElementById('count');
+  const clear = document.getElementById('clear');
+  let current = '';
+  const chips = buildMap(looks, k => pick(current === k ? '' : k)); // 같은 칩을 다시 누르면 해제
+
+  const pick = (key, animate = true) => {
+    const [g, v] = key.split(':');
+    const run = () => {
+      current = key;
+      let shown = 0;
+      for (const c of cards) {
+        const on = !key || c.l.keys.has(key);
+        c.el.hidden = !on; if (on) shown++;
+        // 컬러·아이템으로 고르면 그 룩에서 해당하는 아이템 이름을 카드에 보여 준다
+        const hit = on && g !== '상황' && key ? c.l.s.items.filter(it => (g === '컬러' ? familyOf(it.color) === v : it.cat === v)) : [];
+        c.match.replaceChildren(...(hit.length ? [h('b', { text: v }), hit.map(it => it.name).join(', ')] : []));
+        c.match.hidden = !hit.length;
+      }
+      for (const b of chips) {
+        b.setAttribute('aria-pressed', String(b.dataset.key === key));
+        if (b.dataset.key !== key) continue;
+        // 폰에서 칩 줄이 옆으로 넘어가 있으면 고른 칩이 보이게 가로로만 민다
+        const row = b.parentElement;
+        row.scrollLeft += b.getBoundingClientRect().left - row.getBoundingClientRect().left - (row.clientWidth - b.offsetWidth) / 2;
+      }
+      title.textContent = !key ? '모든 룩' : g === '상황' ? `${v} 룩` : `${v}${iga(v)} 들어간 룩`;
+      count.textContent = shown;
+      clear.hidden = !key;
+    };
+    const motion = animate && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (motion && document.startViewTransition) document.startViewTransition(run);
+    else {
+      run();
+      if (motion) { grid.classList.remove('flash'); void grid.offsetWidth; grid.classList.add('flash'); }
+    }
+    history.replaceState(null, '', key ? `#${encodeURIComponent(key)}` : location.pathname + location.search);
+  };
+  clear.onclick = () => pick('');
+  const start = decodeURIComponent(location.hash.slice(1));
+  pick(chips.some(b => b.dataset.key === start) ? start : '', false);
+}
+
+function showError() {
+  const retry = h('button', { type: 'button', class: 'btn ghost small', text: '다시 불러오기' });
+  retry.onclick = () => location.reload();
+  document.getElementById('grid').replaceChildren(h('div', { class: 'load-error' },
+    h('p', { text: '룩을 불러오지 못했어요. 인터넷 연결을 확인하고 다시 시도해 주세요.' }), retry));
+}
+
+loadLooks().then(render).catch(showError);
