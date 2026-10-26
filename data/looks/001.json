@@ -4,8 +4,8 @@
   "season": "가을",
   "title": "이번 주 골라둔 가을 코디 세 벌",
   "headline": "포근한 크림부터\n깊은 크랜베리까지.",
-  "summary": "화이트 퍼가디건, 숏트렌치와 연청 데님, 크랜베리 가디건. 기분 따라 골라 입는 세 가지 가을 무드.",
-  "description": "이번 주에 입을 가을 코디를 미리 골라뒀어요. 포근하게 시작하고 싶은 날엔 화이트 퍼가디건, 가볍게 나가고 싶은 날엔 숏트렌치, 저녁 약속이 있는 날엔 크랜베리 가디건이에요. 여러분은 몇 번이 제일 마음에 들어요?",
+  "summary": "크림 퍼가디건, 숏트렌치와 퍼프 블라우스, 크랜베리 가디건. 기분 따라 골라 입는 세 가지 가을 무드.",
+  "description": "이번 주에 입을 가을 코디를 미리 골라뒀어요. 포근하게 시작하고 싶은 날엔 크림 퍼가디건, 가볍게 나가고 싶은 날엔 숏트렌치에 퍼프 블라우스, 저녁 약속이 있는 날엔 크랜베리 가디건이에요. 여러분은 몇 번이 제일 마음에 들어요?",
   "tags": [
     "데이트",
     "주말",
@@ -29,23 +29,23 @@
       "#7d2638"
     ]
   ],
-  "instagram": "https://www.instagram.com/p/De7HTh2k27e/",
+  "instagram": "https://www.instagram.com/ootw.yunseo/p/De9Xdv6ibXV/",
   "cover": "img/ep001/1-s.webp",
   "sets": [
     {
       "name": "LOOK 1 · 크림 × 브라운",
-      "mood": "포근하게 시작하는 날",
+      "mood": "낙엽 떨어지는 서울숲에서",
       "tags": [
         "데이트",
         "주말"
       ],
       "image": "img/ep001/1.webp",
-      "alt": "크림 퍼가디건과 브라운 코듀로이 롱스커트를 입은 윤서",
+      "alt": "낙엽 깔린 서울숲 길에서 크림 퍼가디건과 브라운 코듀로이 롱스커트를 입은 윤서",
       "items": [
         {
           "cat": "가디건",
           "name": "앙고라 퍼가디건",
-          "color": "화이트",
+          "color": "크림",
           "url": "https://applink.a-bly.com/f462hlc"
         },
         {
@@ -60,17 +60,24 @@
           "color": "아이보리",
           "url": "https://applink.a-bly.com/i32uybi"
         }
-      ]
+      ],
+      "extra": [
+        {
+          "image": "img/ep001/1b.webp",
+          "alt": "크림 퍼가디건을 입고 웃는 윤서의 상반신 (릴스 장면)"
+        }
+      ],
+      "reel": "https://www.instagram.com/ootw.yunseo/reel/De9YysNv-BM/"
     },
     {
-      "name": "LOOK 2 · 숏트렌치 × 데님",
-      "mood": "가볍게 나가고 싶은 날",
+      "name": "LOOK 2 · 숏트렌치 × 블라우스",
+      "mood": "성수 빨간 벽돌 골목에서",
       "tags": [
         "주말",
         "산책"
       ],
       "image": "img/ep001/2.webp",
-      "alt": "베이지 숏트렌치와 연청 부츠컷 데님을 입은 윤서",
+      "alt": "성수 벽돌 골목에서 베이지 숏트렌치와 퍼프 블라우스, 연청 부츠컷을 입고 걷는 윤서",
       "items": [
         {
           "cat": "아우터",
@@ -109,17 +116,24 @@
           "color": "",
           "url": "https://applink.a-bly.com/nr4b3pc"
         }
-      ]
+      ],
+      "extra": [
+        {
+          "image": "img/ep001/2b.webp",
+          "alt": "숏트렌치 안에 퍼프 블라우스를 입은 윤서의 상반신 (릴스 장면)"
+        }
+      ],
+      "reel": "https://www.instagram.com/ootw.yunseo/reel/De9Y_SfPp1P/"
     },
     {
       "name": "LOOK 3 · 크랜베리 × 차콜",
-      "mood": "저녁 약속 있는 날",
+      "mood": "저녁 약속 있는 날, 책방 앞에서",
       "tags": [
         "저녁약속",
         "데이트"
       ],
       "image": "img/ep001/3.webp",
-      "alt": "크랜베리 가디건과 차콜 플리츠 롱스커트를 입은 윤서",
+      "alt": "책방 앞에서 크랜베리 가디건과 차콜 플리츠 롱스커트를 입고 책을 든 윤서",
       "items": [
         {
           "cat": "가디건",

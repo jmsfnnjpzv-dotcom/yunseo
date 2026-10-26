@@ -37,8 +37,8 @@ function gallery(imgs, setName, first) {
   const track = h('div', { class: 'track', tabindex: imgs.length > 1 ? '0' : '-1', 'aria-label': `${setName} 사진 ${imgs.length}장` },
     ...imgs.map((m, j) => h('figure', { class: 'shot' },
       h('img', first && j === 0
-        ? { src: m.image, alt: m.alt, width: 720, height: 960, fetchpriority: 'high' }
-        : { src: m.image, alt: m.alt, width: 720, height: 960, loading: 'lazy', decoding: 'async' }),
+        ? { src: m.image, alt: m.alt, width: 720, height: 1280, fetchpriority: 'high' }
+        : { src: m.image, alt: m.alt, width: 720, height: 1280, loading: 'lazy', decoding: 'async' }),
       h('span', { class: 'ai-tag', text: 'AI 이미지' }))));
   const box = h('div', { class: 'shots' + (imgs.length > 1 ? ' many' : '') }, track);
   if (imgs.length < 2) return box;
@@ -143,6 +143,7 @@ fetch(`data/looks/${ep}.json`).then(r => { if (!r.ok) throw 0; return r.json(); 
       gallery(imgs, s.name, i === 0),
       h('div', { class: 'set-side' },
         h('div', { class: 'set-info' }, h('h2', { text: s.name }), s.mood ? h('p', { class: 'mood', text: s.mood }) : null),
+        safe(s.reel) ? h('a', { class: 'reel-link', href: safe(s.reel), target: '_blank', rel: 'noopener', text: '이 룩 릴스 영상 보기 ↗' }) : null,
         items));
     main.append(sec);
     return { sec, items, s };

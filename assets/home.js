@@ -1,6 +1,6 @@
 // 룩북: data/looks/001.json, 002.json ... 을 순서대로 찾아 불러와 룩(세트)마다 카드 하나로 보여 줍니다.
 // 새 룩 추가 = 다음 번호의 JSON 하나 + 이미지 폴더만 추가하면 끝. 위쪽 '룩 지도'(상황·컬러·아이템)는 JSON에서 저절로 만들어집니다.
-const SITUATIONS = { 출근: '💼', 카페: '☕', 데이트: '💐', 주말: '🧺', 산책: '🍂', 저녁약속: '🍷', 하객: '🎀', 여행: '🧳' };
+const SITUATIONS = { 카페: '☕', 데이트: '💐', 주말: '🧺', 산책: '🍂', 저녁약속: '🍷', 하객: '🎀', 여행: '🧳' };
 const ITEMS = ['아우터', '가디건', '니트', '블라우스', '셔츠', '티셔츠', '원피스', '스커트', '데님', '팬츠', '슈즈', '가방', '머플러', '주얼리'];
 // 아이템의 색 이름 → 지도의 색 묶음: [묶음 이름, 견본색, 이 묶음에 드는 색 이름]. 새 색이 나오면 여기에 더한다
 const COLORS = [
@@ -27,7 +27,18 @@ async function getLook(n) {
   } catch { return { error: true }; }
 }
 
+// data/looks/index.json(번호 목록)이 있으면 그 번호만 불러와서 없는 번호를 찔러 보지 않는다(콘솔 404 없음).
+// 목록이 없으면 예전처럼 001부터 차례로 찾아본다
 async function loadLooks() {
+  try {
+    const r = await fetch('data/looks/index.json', { cache: 'no-cache' });
+    if (r.ok) {
+      const ids = await r.json();
+      const got = await Promise.all(ids.map(id => getLook(Number(id))));
+      if (got.some(b => b.error || b.missing)) throw new Error('load');
+      return got.map(b => b.look).sort((a, b) => b.id.localeCompare(a.id));
+    }
+  } catch (e) { if (e.message === 'load') throw e; }
   const looks = [];
   for (let start = 1; ; start += 6) {
     const batch = await Promise.all([0, 1, 2, 3, 4, 5].map(i => getLook(start + i)));
@@ -69,7 +80,7 @@ function looksOf(ep) {
 }
 
 function card(l, n) {
-  const img = h('img', { src: l.thumb, alt: l.s.alt, width: 480, height: 640, loading: n < 4 ? 'eager' : 'lazy', decoding: 'async' });
+  const img = h('img', { src: l.thumb, alt: l.s.alt, width: 405, height: 720, loading: n < 4 ? 'eager' : 'lazy', decoding: 'async' });
   img.onerror = () => { img.onerror = null; img.src = l.s.image; }; // 썸네일이 없으면 큰 사진으로
   const match = h('p', { class: 'match', hidden: '' });
   const el = h('article', { class: 'card', style: `--i:${n};view-transition-name:look-${l.id}` },
