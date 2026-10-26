@@ -85,7 +85,7 @@ function card(l, n) {
   const match = h('p', { class: 'match', hidden: '' });
   const el = h('article', { class: 'card', style: `--i:${n};view-transition-name:look-${l.id}` },
     h('a', { class: 'card-img', href: l.href, tabindex: '-1', 'aria-hidden': 'true' },
-      img, h('span', { class: 'ep', text: l.badge }), h('span', { class: 'ai-tag', text: 'AI 이미지' })),
+      img, h('span', { class: 'ep', text: l.badge })),
     h('div', { class: 'card-body' },
       h('p', { class: 'meta', text: [fmtDate(l.ep.date), l.ep.weather && `🌤 ${l.ep.weather.temp}`].filter(Boolean).join(' · ') }),
       h('h3', {}, h('a', { href: l.href, text: l.title })),

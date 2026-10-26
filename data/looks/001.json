@@ -30,6 +30,7 @@
     ]
   ],
   "instagram": "https://www.instagram.com/ootw.yunseo/p/De9Xdv6ibXV/",
+  "instagramThumb": "img/ep001/ig-post.webp",
   "cover": "img/ep001/1-s.webp",
   "sets": [
     {
@@ -67,7 +68,8 @@
           "alt": "크림 퍼가디건을 입고 웃는 윤서의 상반신 (릴스 장면)"
         }
       ],
-      "reel": "https://www.instagram.com/ootw.yunseo/reel/De9YysNv-BM/"
+      "reel": "https://www.instagram.com/ootw.yunseo/reel/De9YysNv-BM/",
+      "reelThumb": "img/ep001/ig-reel-1.webp"
     },
     {
       "name": "LOOK 2 · 숏트렌치 × 블라우스",
@@ -123,7 +125,8 @@
           "alt": "숏트렌치 안에 퍼프 블라우스를 입은 윤서의 상반신 (릴스 장면)"
         }
       ],
-      "reel": "https://www.instagram.com/ootw.yunseo/reel/De9Y_SfPp1P/"
+      "reel": "https://www.instagram.com/ootw.yunseo/reel/De9Y_SfPp1P/",
+      "reelThumb": "img/ep001/ig-reel-2.webp"
     },
     {
       "name": "LOOK 3 · 크랜베리 × 차콜",

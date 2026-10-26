@@ -32,14 +32,13 @@ async function copyAll(look) {
   catch { toast('복사하지 못했어요. 아이템을 길게 눌러 링크를 하나씩 복사해 주세요', 3200); }
 }
 
-// 사진 넘기기: 손가락으로 밀기 + 좌우 버튼 + 키보드 화살표 + "1 / 3" 위치 표시. 사진마다 'AI 이미지' 표시
+// 사진 넘기기: 손가락으로 밀기 + 좌우 버튼 + 키보드 화살표 + "1 / 3" 위치 표시
 function gallery(imgs, setName, first) {
   const track = h('div', { class: 'track', tabindex: imgs.length > 1 ? '0' : '-1', 'aria-label': `${setName} 사진 ${imgs.length}장` },
     ...imgs.map((m, j) => h('figure', { class: 'shot' },
       h('img', first && j === 0
         ? { src: m.image, alt: m.alt, width: 720, height: 1280, fetchpriority: 'high' }
-        : { src: m.image, alt: m.alt, width: 720, height: 1280, loading: 'lazy', decoding: 'async' }),
-      h('span', { class: 'ai-tag', text: 'AI 이미지' }))));
+        : { src: m.image, alt: m.alt, width: 720, height: 1280, loading: 'lazy', decoding: 'async' }))));
   const box = h('div', { class: 'shots' + (imgs.length > 1 ? ' many' : '') }, track);
   if (imgs.length < 2) return box;
 
@@ -79,6 +78,20 @@ function gallery(imgs, setName, first) {
   requestAnimationFrame(update);
   return box;
 }
+
+// 인스타 게시물 카드: 작은 사진(누르면 그 게시물로) + 짧은 안내. 릴스는 재생 표시
+function igCard({ url, thumb, alt, label, sub, reel }) {
+  return h('a', { class: 'ig-card' + (reel ? ' reel' : ''), href: url, target: '_blank', rel: 'noopener' },
+    h('span', { class: 'ig-thumb' },
+      h('img', { src: thumb, alt, width: 192, height: 256, loading: 'lazy', decoding: 'async' }),
+      reel ? h('span', { class: 'play', 'aria-hidden': 'true' }) : null),
+    h('span', { class: 'ig-text' },
+      h('b', { text: label }),
+      h('small', { text: sub })),
+    h('span', { class: 'ig-go', 'aria-hidden': 'true', text: '↗' }));
+}
+// 썸네일 칸이 없으면 그 룩의 홈 썸네일(-s)을 쓴다
+const thumbOf = img => img.replace(/(\.\w+)$/, '-s$1');
 
 function itemList(s) {
   const list = h('ul', { class: 'item-list' });
@@ -143,7 +156,8 @@ fetch(`data/looks/${ep}.json`).then(r => { if (!r.ok) throw 0; return r.json(); 
       gallery(imgs, s.name, i === 0),
       h('div', { class: 'set-side' },
         h('div', { class: 'set-info' }, h('h2', { text: s.name }), s.mood ? h('p', { class: 'mood', text: s.mood }) : null),
-        safe(s.reel) ? h('a', { class: 'reel-link', href: safe(s.reel), target: '_blank', rel: 'noopener', text: '이 룩 릴스 영상 보기 ↗' }) : null,
+        safe(s.reel) ? igCard({ url: safe(s.reel), thumb: s.reelThumb || thumbOf(s.image), alt: `${s.name} 릴스 영상 표지`,
+          label: '릴스로 보기', sub: '이 룩이 움직이는 영상 · 인스타그램', reel: true }) : null,
         items));
     main.append(sec);
     return { sec, items, s };
@@ -164,7 +178,8 @@ fetch(`data/looks/${ep}.json`).then(r => { if (!r.ok) throw 0; return r.json(); 
       look.palette?.length ? h('div', { class: 'palette' }, ...look.palette.map(([n, c]) => h('span', {}, h('i', { style: `background:${c}` }), n))) : null,
       // 상황 태그를 누르면 룩북에서 그 상황의 룩만 모아 본다
       look.tags?.length ? h('p', { class: 'tags' }, ...look.tags.map(t => h('a', { href: `./#${encodeURIComponent('상황:' + t)}`, text: '#' + t }))) : null,
-      ig ? h('a', { class: 'ig-link', href: ig, target: '_blank', rel: 'noopener', text: '인스타 게시물에서 댓글 남기기 ↗' }) : null),
+      ig ? igCard({ url: ig, thumb: look.instagramThumb || look.cover, alt: `EP.${look.id} 인스타 게시물 첫 사진`,
+        label: '인스타에서 보기', sub: '게시물에 댓글 남기기 · @ootw.yunseo' }) : null),
     end));
   $('#copy').onclick = () => copyAll(look);
 
