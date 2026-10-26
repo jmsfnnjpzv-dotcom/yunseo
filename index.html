@@ -37,7 +37,10 @@
     <section class="list" aria-labelledby="result">
       <div class="result-head">
         <h2 id="result" aria-live="polite"><span id="result-title">모든 룩</span> <span id="count"></span></h2>
-        <button type="button" class="clear" id="clear" hidden>전체 보기 ✕</button>
+        <div class="head-tools">
+          <button type="button" class="clear" id="clear" hidden>전체 보기 ✕</button>
+          <div class="sort" id="sort" role="group" aria-label="순서"></div>
+        </div>
       </div>
       <div class="grid" id="grid"><p class="loading">룩을 불러오는 중…</p></div>
     </section>

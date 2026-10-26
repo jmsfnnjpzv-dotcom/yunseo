@@ -1,6 +1,5 @@
 const $ = s => document.querySelector(s);
 const REL = 'sponsored nofollow noopener noreferrer';
-const AD = '(광고) 기재된 제휴 링크를 통해 상품을 구매하실 경우, 상품 구매로 발생한 수익의 일부가 작성자에게 분배됩니다.';
 
 function h(tag, attrs = {}, ...kids) {
   const el = document.createElement(tag);
@@ -20,9 +19,9 @@ function toast(msg, ms = 1800) {
   clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('on'), ms);
 }
 
-// 복사한 글(다른 곳에 붙여 넣는 글)은 첫 줄에 에이블리 광고 문구를 둔다. 화면에는 나오지 않음
+// 복사한 글: 룩 이름 + 아이템 목록과 링크만
 async function copyAll(look) {
-  const lines = [AD, '', `윤서의 룩북 EP.${look.id} · ${look.title}`, ''];
+  const lines = [`윤서의 룩북 EP.${look.id} · ${look.title}`, ''];
   for (const s of look.sets) {
     if (look.sets.length > 1) lines.push(`[${s.name}]`);
     for (const it of s.items) lines.push(`${it.name}${it.color ? ' (' + it.color + ')' : ''} ${it.url}`);

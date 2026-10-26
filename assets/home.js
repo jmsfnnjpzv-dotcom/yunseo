@@ -124,14 +124,30 @@ function buildMap(looks, onPick) {
         return b;
       }))));
   }
-  return chips;
+  // 순서: 최신순(기본)·오래된순. 지도 칩과 같은 모양의 작은 칩 두 개, '모든 룩 N' 줄 오른쪽
+  const sorts = ['최신순', '오래된순'].map(v => h('button', { type: 'button', class: 'chip', 'data-sort': v, 'aria-pressed': 'false', text: v }));
+  document.getElementById('sort').replaceChildren(...sorts);
+  return { chips, sorts };
+}
+
+// EP 번호(같으면 날짜)가 큰 것이 최신. 한 EP 안의 LOOK 1·2 순서는 그대로
+const epKey = l => `${l.ep.id}|${l.ep.date || ''}`;
+function sortCards(cards, order) {
+  const dir = order === '오래된순' ? 1 : -1;
+  return [...cards].sort((a, b) => {
+    const k = epKey(a.l).localeCompare(epKey(b.l));
+    return k ? k * dir : a.n - b.n;
+  });
 }
 
 function render(eps) {
   const looks = eps.flatMap(looksOf);
-  const cards = looks.map(card);
+  const cards = looks.map((l, n) => ({ ...card(l, n), n }));
   const grid = document.getElementById('grid');
-  grid.replaceChildren(...cards.map(c => c.el));
+  let order = sessionStorage.getItem('yunseo-sort') === '오래된순' ? '오래된순' : '최신순';
+  const place = () => sortCards(cards, order).forEach((c, i) => { c.el.style.setProperty('--i', i); grid.append(c.el); });
+  grid.replaceChildren();
+  place();
   grid.classList.add('intro');
   setTimeout(() => grid.classList.remove('intro'), 1200);
 
@@ -139,7 +155,15 @@ function render(eps) {
   const count = document.getElementById('count');
   const clear = document.getElementById('clear');
   let current = '';
-  const chips = buildMap(looks, k => pick(current === k ? '' : k)); // 같은 칩을 다시 누르면 해제
+  const { chips, sorts } = buildMap(looks, k => pick(current === k ? '' : k)); // 같은 칩을 다시 누르면 해제
+  const markSort = () => sorts.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.sort === order)));
+  markSort();
+  for (const b of sorts) b.onclick = () => {
+    if (b.dataset.sort === order) return;
+    order = b.dataset.sort; sessionStorage.setItem('yunseo-sort', order); markSort();
+    const motion = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (motion && document.startViewTransition) document.startViewTransition(place); else place();
+  };
 
   const pick = (key, animate = true) => {
     const [g, v] = key.split(':');
