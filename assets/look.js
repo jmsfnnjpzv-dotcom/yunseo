@@ -142,13 +142,12 @@ fetch(`data/looks/${ep}.json`).then(r => { if (!r.ok) throw 0; return r.json(); 
       multi ? h('nav', { class: 'toc', 'aria-label': '룩 바로가기' },
         ...look.sets.map((s, i) => h('a', { href: `#set-${i + 1}`, text: s.name }))) : null));
 
-  // 룩마다 사진 → 이름 → 그 룩의 아이템. 목록 머리마다 '(광고) 제휴 링크' 표시 하나
+  // 룩마다 사진 → 이름 → 그 룩의 아이템. 제휴 안내는 페이지 맨 아래 한 줄(footer)
   const boxes = look.sets.map((s, i) => {
     const imgs = [{ image: s.image, alt: s.alt }, ...(s.extra || [])];
     const items = h('div', { class: 'set-items', id: i === 0 ? 'items' : `items-${i + 1}` },
       h('div', { class: 'set-head' },
-        h('p', { class: 'set-count', text: multi ? `${lookNo(s, i)} 아이템 ${s.items.length}` : `아이템 ${s.items.length}` }),
-        h('span', { class: 'ad-tag', text: '(광고) 제휴 링크' })),
+        h('p', { class: 'set-count', text: multi ? `${lookNo(s, i)} 아이템 ${s.items.length}` : `아이템 ${s.items.length}` })),
       itemList(s));
     const sec = h('section', { class: 'set', id: `set-${i + 1}` },
       gallery(imgs, s.name, i === 0),
