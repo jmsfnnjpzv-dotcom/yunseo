@@ -152,7 +152,7 @@ function ogOf(look, warns) {
 
 function pageHtml(look, og) {
   const url = `${SITE}looks/${look.id}/`;
-  const title = `EP.${look.id} ${look.title.trim()}`;
+  const title = look.title.trim(); // 번호·날짜는 미리보기에 쓰지 않는다
   const desc = `AI 가상인물 윤서의 데일리룩 · ${String(look.summary || look.title).trim()}`;
   const first = look.sets[0].image;
   const meta = [
@@ -170,7 +170,7 @@ function pageHtml(look, og) {
     `<meta property="og:image" content="${esc(og.url)}">`,
     og.size && `<meta property="og:image:width" content="${og.size.w}">`,
     og.size && `<meta property="og:image:height" content="${og.size.h}">`,
-    `<meta property="og:image:alt" content="${esc(`EP.${look.id} ${look.title.trim()} — AI로 만든 가상인물 윤서의 룩 사진`)}">`,
+    `<meta property="og:image:alt" content="${esc(`${look.title.trim()} — AI로 만든 가상인물 윤서의 룩 사진`)}">`,
     '<meta name="twitter:card" content="summary_large_image">',
     `<link rel="preload" href="../../data/looks/${look.id}.json" as="fetch" crossorigin>`,
     !isUrl(first) && `<link rel="preload" href="../../${esc(first)}" as="image" fetchpriority="high">`,

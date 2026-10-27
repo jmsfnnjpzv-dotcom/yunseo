@@ -13,7 +13,6 @@ const COLORS = [
 ];
 const familyOf = c => COLORS.find(f => f[2].includes(c))?.[0];
 const pad = n => String(n).padStart(3, '0');
-const fmtDate = d => (d ? d.slice(5).replace('-', '.') : '');
 const rank = (list, v) => { const i = list.indexOf(v); return i < 0 ? 99 : i; };
 const iga = w => ((w.charCodeAt(w.length - 1) - 0xac00) % 28 ? '이' : '가'); // 받침 있으면 '이'
 const byNewest = (a, b) => b.id.localeCompare(a.id);
@@ -87,11 +86,11 @@ function looksOf(ep, pages) {
       if (it.cat) keys.add('아이템:' + it.cat);
       const f = familyOf(it.color); if (f) keys.add('컬러:' + f);
     }
-    // 쇼츠가 있는 룩은 EP 배지 안에만 ▶ 표시 (따로 누르는 곳을 만들지 않는다. 카드의 사진·이름은 모두 같은 곳으로)
+    // 쇼츠가 있는 룩은 배지 안에만 ▶ 표시 (따로 누르는 곳을 만들지 않는다. 카드의 사진·이름은 모두 같은 곳으로)
     const short = !!(ytId(s.youtubeId) || (i === 0 && ytId(ep.youtubeId)));
     return {
       ep, s, items, keys, short, id: `${ep.id}-${i + 1}`,
-      badge: (multi ? `EP.${ep.id} · ${s.name.split('·')[0].trim()}` : `EP.${ep.id}`) + (short ? ' ▶︎' : ''),
+      badge: [multi ? s.name.split('·')[0].trim() : '', short ? '▶︎' : ''].filter(Boolean).join(' '), // 번호·날짜는 화면에 쓰지 않는다
       title: s.name.split('·').pop().trim(), // 상세에서 사진 아래 붙는 룩 이름과 같게
       href: `${page}#set-${i + 1}`, // 사진·이름 → 그 룩의 사진
       itemsHref: `${page}#${i === 0 ? 'items' : `items-${i + 1}`}`, // '아이템 N개 보기' → 그 룩의 아이템 목록
@@ -106,9 +105,9 @@ function card(l, n) {
   const match = h('p', { class: 'match', hidden: '' });
   const el = h('article', { class: 'card', style: `--i:${n};view-transition-name:look-${l.id}` },
     h('a', { class: 'card-img', href: l.href, tabindex: '-1', 'aria-hidden': 'true' },
-      img, h('span', { class: 'ep', text: l.badge })),
+      img, l.badge ? h('span', { class: 'ep', text: l.badge }) : null),
     h('div', { class: 'card-body' },
-      h('p', { class: 'meta', text: [fmtDate(l.ep.date), l.ep.weather && `🌤 ${l.ep.weather.temp}`].filter(Boolean).join(' · ') }),
+      l.ep.weather ? h('p', { class: 'meta', text: `🌤 ${l.ep.weather.temp}` }) : null,
       h('h3', {}, h('a', { href: l.href }, l.title, l.short ? h('span', { class: 'sr', text: ' (쇼츠 영상 있음)' }) : null)),
       l.s.mood ? h('p', { class: 'mood', text: l.s.mood }) : null,
       match,

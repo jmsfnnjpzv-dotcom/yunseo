@@ -25,7 +25,6 @@ function h(tag, attrs = {}, ...kids) {
   return el;
 }
 const safe = u => { try { const x = new URL(u); return x.protocol === 'https:' ? x.href : null; } catch { return null; } };
-const fmtDate = d => (d ? d.slice(5).replace('-', '.') : '');
 // "LOOK 1 · 크림 × 브라운" → "LOOK 1". 이름에 '·'가 없으면 순서로 붙인다
 const lookNo = (s, i) => (s.name.includes('·') ? s.name.split('·')[0].trim() : `LOOK ${i + 1}`);
 // 화면에 나오는 아이템 = 주소가 있는 것만. 주소가 빈 칸(아직 안 쓰는 쿠팡·무신사 자리)은 보이지도, 세지도 않는다
@@ -61,7 +60,7 @@ async function copyAll(look, pageUrl) {
   const all = look.sets.flatMap(itemsOf);
   const lines = [AD];
   if (all.some(it => shopOf(it) === '쿠팡')) lines.push(AD_COUPANG);
-  lines.push(AI_NOTE, '', `윤서의 룩북 EP.${look.id} · ${look.title}`, pageUrl, '');
+  lines.push(AI_NOTE, '', `윤서의 룩북 · ${look.title}`, pageUrl, '');
   for (const s of look.sets) {
     const items = itemsOf(s);
     if (!items.length) continue;
@@ -227,7 +226,7 @@ document.addEventListener('click', e => {
 });
 
 function render(look) {
-  document.title = `EP.${look.id} ${look.title} · 윤서의 룩북`;
+  document.title = `${look.title} · 윤서의 룩북`;
   const main = $('#look'); $('#loading').remove();
   const sets = look.sets.map((s, i) => ({ s, i, items: itemsOf(s), short: shortOf(look, s, i), loop: loopOf(look, s, i) }));
   const total = sets.reduce((n, x) => n + x.items.length, 0);
@@ -241,12 +240,11 @@ function render(look) {
   }
   const pageUrl = $('link[rel="canonical"]')?.href || location.href.split('#')[0];
 
-  // 머리: EP 번호 → 큰 제목 → 날씨 줄 → 룩 바로가기. 첫 화면은 최대한 사진에 양보한다
+  // 머리: 큰 제목 → 날씨 줄 → 룩 바로가기. 첫 화면은 최대한 사진에 양보한다
   // (날씨·색·태그·글 같은 칸은 JSON에 없어도 그 줄만 빠지고 화면은 그대로 나온다)
   const w = look.weather;
   main.append(
     h('header', { class: 'look-head' },
-      h('p', { class: 'eyebrow', text: [`EP.${look.id}`, fmtDate(look.date)].filter(Boolean).join(' · ') }),
       h('h1', { text: look.headline || look.title }),
       w ? h('p', { class: 'weather', text: ['🌤 ' + w.temp, w.note].filter(Boolean).join(' · ') }) : null,
       multi ? h('nav', { class: 'toc', 'aria-label': '룩 바로가기' },
@@ -285,7 +283,7 @@ function render(look) {
       look.palette?.length ? h('div', { class: 'palette' }, ...look.palette.map(([n, c]) => h('span', {}, h('i', { style: `background:${c}` }), n))) : null,
       // 상황 태그를 누르면 룩북에서 그 상황의 룩만 모아 본다
       look.tags?.length ? h('p', { class: 'tags' }, ...look.tags.map(t => h('a', { href: `${HOME}#${encodeURIComponent('상황:' + t)}`, text: '#' + t }))) : null,
-      ig ? igCard({ url: ig, thumb: look.instagramThumb || look.cover, alt: `EP.${look.id} 인스타 게시물 첫 사진`,
+      ig ? igCard({ url: ig, thumb: look.instagramThumb || look.cover, alt: `${look.title} 인스타 게시물 첫 사진`,
         label: '인스타에서 보기', sub: '게시물에 댓글 남기기 · @ootw.yunseo' }) : null,
       ytCard()),
     end));
