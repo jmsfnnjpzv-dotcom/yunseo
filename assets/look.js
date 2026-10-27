@@ -7,7 +7,6 @@ const YT_CHANNEL = 'https://www.youtube.com/@ootw.yunseo';
 const AD = '(광고) 기재된 제휴 링크를 통해 상품을 구매하실 경우, 상품 구매로 발생한 수익의 일부가 작성자에게 분배됩니다.';
 const AD_COUPANG = '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.';
 const AI_NOTE = '윤서는 AI로 만든 가상인물이에요.';
-const PHOTO_NOTE = '사진은 AI 이미지라 색·디테일·핏이 다를 수 있어요.';
 // 상점 이름: 링크 주소로 먼저 알아보고, 모르는 주소면 JSON의 shop 칸(에이블리·쿠팡·무신사)을 쓴다
 const SHOPS = [['에이블리', /(^|\.)a-bly\.com$/], ['쿠팡', /(^|\.)(coupang\.com|coupa\.ng)$/], ['무신사', /(^|\.)musinsa\.com$/]];
 
@@ -105,7 +104,6 @@ function shorts(box, stage, id, setName) {
   const out = h('a', { href: `https://www.youtube.com/shorts/${id}`, target: '_blank', rel: 'noopener', text: '유튜브에서 보기 ↗' });
   stage.append(pill, h('div', { class: 'player' }, frame));
   box.append(h('div', { class: 'vbar' },
-    h('span', { class: 'tag', text: '가상인물' }),
     h('span', { class: 'vbar-links' }, back, h('i', { 'aria-hidden': 'true', text: '·' }), out)));
   let iframe = null;
   pill.onclick = e => {
@@ -135,8 +133,7 @@ function gallery({ imgs, setName, first, short, loop }) {
   const moving = loop && !reduceMotion() && !navigator.connection?.saveData;
   const track = h('div', { class: 'track', tabindex: imgs.length > 1 ? '0' : '-1', 'aria-label': `${setName} 사진 ${imgs.length}장` },
     ...imgs.map((m, j) => h('figure', { class: 'shot' },
-      j === 0 && moving ? loopVideo(loop, m, first) : photo(m, first && j === 0),
-      h('span', { class: 'ai-badge', 'aria-hidden': 'true', text: '가상인물' }))));
+      j === 0 && moving ? loopVideo(loop, m, first) : photo(m, first && j === 0))));
   const stage = h('div', { class: 'stage' }, track);
   const box = h('div', { class: 'shots' + (imgs.length > 1 ? ' many' : '') }, stage);
   if (imgs.length > 1) {
@@ -236,9 +233,15 @@ function render(look) {
   const total = sets.reduce((n, x) => n + x.items.length, 0);
   const coupang = sets.some(x => x.items.some(it => shopOf(it) === '쿠팡'));
   const multi = look.sets.length > 1;
+  // 고지는 맨 아래 footer에 작게: 에이블리 광고 문구(링크가 있을 때) → 쿠팡 문구(쿠팡 링크가 실제로 있을 때만) → 가상인물 문구
+  const foot = document.querySelector('.foot');
+  if (foot) {
+    foot.querySelectorAll('.disclose').forEach(n => n.remove());
+    [total ? AD : '', coupang ? AD_COUPANG : '', AI_NOTE].filter(Boolean).forEach(t => foot.append(h('p', { class: 'disclose', text: t })));
+  }
   const pageUrl = $('link[rel="canonical"]')?.href || location.href.split('#')[0];
 
-  // 머리: EP 번호 → 큰 제목 → 날씨 줄 → 고지 상자(3줄 안쪽) → 룩 바로가기. 첫 화면은 최대한 사진에 양보한다
+  // 머리: EP 번호 → 큰 제목 → 날씨 줄 → 룩 바로가기. 첫 화면은 최대한 사진에 양보한다
   // (날씨·색·태그·글 같은 칸은 JSON에 없어도 그 줄만 빠지고 화면은 그대로 나온다)
   const w = look.weather;
   main.append(
@@ -246,10 +249,6 @@ function render(look) {
       h('p', { class: 'eyebrow', text: [`EP.${look.id}`, fmtDate(look.date)].filter(Boolean).join(' · ') }),
       h('h1', { text: look.headline || look.title }),
       w ? h('p', { class: 'weather', text: ['🌤 ' + w.temp, w.note].filter(Boolean).join(' · ') }) : null,
-      h('div', { class: 'notice', role: 'note', 'aria-label': '광고·가상인물 안내' },
-        total ? h('p', { text: AD }) : null,
-        coupang ? h('p', { text: AD_COUPANG }) : null,
-        h('p', { class: 'ai', text: AI_NOTE })),
       multi ? h('nav', { class: 'toc', 'aria-label': '룩 바로가기' },
         ...look.sets.map((s, i) => h('a', { href: `#set-${i + 1}`, text: s.name }))) : null));
 
@@ -259,10 +258,8 @@ function render(look) {
     const box = h('div', { class: 'set-items', id: i === 0 ? 'items' : `items-${i + 1}` },
       h('div', { class: 'set-head' },
         h('p', { class: 'set-count', text: multi ? `${lookNo(s, i)} 아이템 ${items.length}` : `아이템 ${items.length}` }),
-        h('span', { class: 'ad-tag', text: '광고 · 구매하면 수수료' })),
-      items.some(it => shopOf(it) === '쿠팡') ? h('p', { class: 'items-ad', text: AD_COUPANG }) : null,
-      itemList(items),
-      h('p', { class: 'items-note', text: PHOTO_NOTE }));
+        h('span', { class: 'ad-tag', text: '광고' })),
+      itemList(items));
     const sec = h('section', { class: 'set', id: `set-${i + 1}` },
       gallery({ imgs, setName: s.name, first: i === 0, short, loop }),
       h('div', { class: 'set-side' },

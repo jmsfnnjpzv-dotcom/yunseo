@@ -162,6 +162,10 @@ function sortCards(cards, order) {
 }
 
 function render({ eps, pages }) {
+  // 쿠팡 링크가 실제로 있는 룩이 있을 때만 footer에 쿠팡 문구를 더한다
+  const hasCoupang = eps.some(ep => ep.sets.some(set => (set.items || []).some(it => { try { return /(^|\.)(coupang\.com|coupa\.ng)$/.test(new URL(it.url).hostname); } catch { return false; } })));
+  const foot = document.querySelector('.foot');
+  if (hasCoupang && foot) foot.append(h('p', { class: 'disclose', text: '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.' }));
   const looks = eps.flatMap(ep => looksOf(ep, pages));
   const cards = looks.map((l, n) => ({ ...card(l, n), n }));
   const grid = document.getElementById('grid');
