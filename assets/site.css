@@ -5,6 +5,7 @@ body{background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacS
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:auto}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(250,246,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .brand{font-weight:800;font-size:18px;letter-spacing:-.03em}
 .brand span{color:var(--accent);font-weight:600}
@@ -66,25 +67,32 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .foot{padding:24px 20px 40px;border-top:1px solid var(--line);font-size:12.5px;color:var(--sub)}
 .foot p{margin-top:6px}
 .foot .disclose{margin-top:14px;font-size:11.5px;line-height:1.55;color:var(--sub)}
+.foot .disclose+.disclose{margin-top:4px}
 
 /* 상세 */
 .detail{padding-bottom:88px}
 .back{display:inline-flex;align-items:center;min-height:44px;margin:4px 16px 0;padding:0 4px;font-size:14px;color:var(--sub)}
-.look-head{padding:14px 20px 16px}
+.look-head{padding:12px 20px 14px}
 .look-head h1{white-space:pre-line;font-size:25px;line-height:1.35;margin:6px 0;letter-spacing:-.04em}
 .weather{font-size:12.5px;color:var(--sub)}
-.toc{display:flex;gap:6px;margin:12px -20px 0;padding:0 20px;overflow-x:auto;scrollbar-width:none}
+/* 고지 상자: 날씨 줄 바로 아래, 3줄 안쪽. 광고 문구(쿠팡 링크가 있으면 쿠팡 문구도) → 가상인물 문구 */
+.notice{margin-top:10px;padding:8px 12px;border-radius:12px;background:var(--soft);font-size:12px;line-height:1.55;color:var(--sub)}
+.notice .ai{color:var(--ink);font-weight:600}
+.toc{display:flex;gap:6px;margin:10px -20px 0;padding:0 20px;overflow-x:auto;scrollbar-width:none}
 .toc::-webkit-scrollbar{display:none}
 .toc a{flex:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:12.5px;white-space:nowrap}
 .set{margin:0 0 26px;scroll-margin-top:64px}
 /* 사진 넘기기 */
 .shots{position:relative;padding:0 20px}
+.stage{position:relative}
 .track{position:relative;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;border-radius:var(--r)}
 .track::-webkit-scrollbar{display:none}
 .track:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .shot{position:relative;flex:0 0 100%;min-width:0;scroll-snap-align:center}
 .shots.many .shot{flex-basis:88%}
-.shot img{width:100%;aspect-ratio:var(--ratio);object-fit:cover;border-radius:var(--r);background:var(--soft)}
+.shot img,.shot video{display:block;width:100%;height:auto;aspect-ratio:var(--ratio);object-fit:cover;border-radius:var(--r);background:var(--soft)}
+/* 사진마다 오른쪽 위 '가상인물' 배지 */
+.ai-badge{position:absolute;right:10px;top:10px;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.92);font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--ink);pointer-events:none}
 .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 2px 10px rgba(0,0,0,.14);font-size:28px;line-height:42px;text-align:center;color:var(--ink);z-index:2;transition:opacity .2s}
 .nav.prev{left:28px}
 .nav.next{right:28px}
@@ -94,6 +102,23 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .dots{display:flex;justify-content:center;gap:6px}
 .dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:.2s}
 .dots i.on{width:18px;border-radius:3px;background:var(--accent)}
+/* 쇼츠: 사진 왼쪽 아래 알약 → 같은 9:16 칸이 플레이어로. 사진이 여러 장이면(옆 사진이 12% 비침) 알약도 그만큼 안쪽에 */
+.pill{position:absolute;left:10px;bottom:10px;z-index:3;display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 14px 0 12px;border-radius:999px;background:rgba(255,255,255,.94);box-shadow:0 2px 10px rgba(0,0,0,.16);font-size:13px;font-weight:700;color:var(--ink);transition:transform .15s}
+.pill::before{content:"";border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent currentColor}
+.pill:active{transform:scale(.96)}
+.pill:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.shots.many .pill{left:calc(12% + 10px)}
+.player{position:absolute;inset:0;z-index:2;display:none;justify-content:center}
+.player-frame{position:relative;display:grid;place-items:center;height:100%;aspect-ratio:9/16;max-width:100%;border-radius:var(--r);overflow:hidden;background:#1e1a17;color:#d8cfc6;font-size:13px}
+.player-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vbar{display:none;align-items:center;justify-content:space-between;gap:10px;min-height:44px;padding-top:6px}
+.vbar .tag{padding:3px 9px;border-radius:999px;background:var(--soft);font-size:11.5px;font-weight:700;color:var(--accent-text)}
+.vbar-links{display:flex;align-items:center;font-size:13px}
+.vbar-links button,.vbar-links a{display:inline-flex;align-items:center;min-height:38px;padding:0 6px;font-weight:700;color:var(--accent-text)}
+.vbar-links i{font-style:normal;color:var(--sub)}
+.shots.is-short .track{visibility:hidden}
+.shots.is-short .nav,.shots.is-short .pill,.shots.is-short .gbar{display:none}
+.shots.is-short .player,.shots.is-short .vbar{display:flex}
 /* 룩별 아이템 */
 .set-info{padding:12px 20px 0;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .set-info h2{font-size:16px}
@@ -106,14 +131,19 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ig-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .play{position:absolute;left:50%;top:50%;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;background:rgba(30,26,23,.55);backdrop-filter:blur(2px)}
 .play::after{content:"";position:absolute;left:9px;top:7px;border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #fff}
+/* 유튜브 채널 카드: 사진 자리에 재생 표시만 (그 EP의 영상으로 오해하지 않게) */
+.yt-thumb::after{content:"";position:absolute;left:50%;top:50%;margin:-8px 0 0 -5px;border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent var(--accent)}
 .ig-text{display:grid;flex:1;min-width:0;line-height:1.35}
 .ig-text b{font-size:14px;color:var(--ink)}
 .ig-text small{font-size:12px;color:var(--sub);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ig-go{font-size:15px;font-weight:700;color:var(--accent-text)}
 .memo .ig-card{margin:14px 0 0;background:var(--bg)}
+.memo .ig-card+.ig-card{margin-top:8px}
 .set-items{margin:10px 20px 0;padding:2px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;scroll-margin-top:70px}
 .set-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:12px}
 .set-count{font-size:12px;font-weight:700;color:var(--accent-text)}
+.ad-tag{padding:2px 8px;border:1px solid var(--line);border-radius:999px;font-size:11px;color:var(--sub);white-space:nowrap}
+.items-ad{margin-top:6px;font-size:11.5px;line-height:1.5;color:var(--sub)}
 .item-list{list-style:none}
 .item-list li a{display:grid;grid-template-columns:62px 1fr auto;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}
 .set-items .item-list li:last-child a{border-bottom:0}
@@ -123,6 +153,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .name .diff{margin-top:3px;font-weight:600;color:#9b4d2f}
 .go{font-size:12px;font-weight:700;color:var(--accent-text);white-space:nowrap}
 .item-list a:visited .go{color:var(--sub)}
+.items-note{padding:10px 0 12px;border-top:1px solid var(--line);font-size:12px;color:var(--sub)}
 /* 끝: 메모, 복사, 다른 룩 */
 .outro{display:grid;gap:14px;margin:6px 20px 0}
 .memo{padding:16px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
@@ -165,6 +196,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .detail main{max-width:1040px}
   .dock{display:none}
   .look-head h1{font-size:34px}
+  .notice{max-width:620px}
   .toc{flex-wrap:wrap;margin:14px 0 0;padding:0;overflow:visible}
   .set{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:32px;align-items:start;padding:0 20px;margin-bottom:48px}
   .set .shots{padding:0}

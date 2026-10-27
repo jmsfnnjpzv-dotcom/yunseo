@@ -57,40 +57,54 @@
           "cat": "아우터",
           "name": "하이넥 벨트 숏트렌치",
           "color": "베이지",
+          "shop": "에이블리",
           "url": "https://applink.a-bly.com/6uu5rmj",
+          "similar": true,
           "note": "사진과 달리 실물은 하이넥 스탠드 칼라예요"
         },
         {
           "cat": "니트",
           "name": "브이넥 루즈 니트",
           "color": "크림",
-          "url": "https://applink.a-bly.com/dt48sqt"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/dt48sqt",
+          "similar": false
         },
         {
           "cat": "데님",
           "name": "하이웨스트 부츠컷 데님",
           "color": "연청",
-          "url": "https://applink.a-bly.com/petkc2q"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/petkc2q",
+          "similar": false
         },
         {
           "cat": "슈즈",
           "name": "라무드 소가죽 스퀘어 페니 로퍼",
           "color": "브라운",
-          "url": "https://applink.a-bly.com/58hxfnw"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/58hxfnw",
+          "similar": false
         },
         {
           "cat": "가방",
           "name": "셔링 스웨이드 숄더백",
           "color": "커피",
-          "url": "https://applink.a-bly.com/9qr6syh"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/9qr6syh",
+          "similar": false
         },
         {
           "cat": "주얼리",
           "name": "진주 귀걸이 8mm",
           "color": "",
-          "url": "https://applink.a-bly.com/nr4b3pc"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/nr4b3pc",
+          "similar": false
         }
-      ]
+      ],
+      "youtubeId": "",
+      "loopMp4": ""
     }
   ]
 }

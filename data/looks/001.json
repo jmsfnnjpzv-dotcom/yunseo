@@ -47,19 +47,25 @@
           "cat": "가디건",
           "name": "앙고라 퍼가디건",
           "color": "크림",
-          "url": "https://applink.a-bly.com/f462hlc"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/f462hlc",
+          "similar": false
         },
         {
           "cat": "스커트",
           "name": "리본 코듀로이 플리츠 롱스커트",
           "color": "브라운",
-          "url": "https://applink.a-bly.com/cfo5xzw"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/cfo5xzw",
+          "similar": false
         },
         {
           "cat": "슈즈",
           "name": "슈라밸 발레코어 스퀘어 리본 플랫",
           "color": "아이보리",
-          "url": "https://applink.a-bly.com/i32uybi"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/i32uybi",
+          "similar": false
         }
       ],
       "extra": [
@@ -69,7 +75,9 @@
         }
       ],
       "reel": "https://www.instagram.com/ootw.yunseo/reel/De9YysNv-BM/",
-      "reelThumb": "img/ep001/ig-reel-1.webp"
+      "reelThumb": "img/ep001/ig-reel-1.webp",
+      "youtubeId": "",
+      "loopMp4": ""
     },
     {
       "name": "LOOK 2 · 숏트렌치 × 블라우스",
@@ -85,38 +93,50 @@
           "cat": "아우터",
           "name": "하이넥 벨트 숏트렌치",
           "color": "베이지",
+          "shop": "에이블리",
           "url": "https://applink.a-bly.com/6uu5rmj",
+          "similar": true,
           "note": "실물은 하이넥 스탠드 칼라예요"
         },
         {
           "cat": "블라우스",
           "name": "리본 셔링 퍼프 블라우스",
           "color": "아이보리",
-          "url": "https://applink.a-bly.com/cnqcol9"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/cnqcol9",
+          "similar": false
         },
         {
           "cat": "데님",
           "name": "하이웨스트 부츠컷 데님",
           "color": "연청",
-          "url": "https://applink.a-bly.com/petkc2q"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/petkc2q",
+          "similar": false
         },
         {
           "cat": "슈즈",
           "name": "라무드 소가죽 스퀘어 페니 로퍼",
           "color": "브라운",
-          "url": "https://applink.a-bly.com/58hxfnw"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/58hxfnw",
+          "similar": false
         },
         {
           "cat": "가방",
           "name": "셔링 스웨이드 숄더백",
           "color": "커피",
-          "url": "https://applink.a-bly.com/9qr6syh"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/9qr6syh",
+          "similar": false
         },
         {
           "cat": "주얼리",
           "name": "진주 귀걸이 8mm",
           "color": "",
-          "url": "https://applink.a-bly.com/nr4b3pc"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/nr4b3pc",
+          "similar": false
         }
       ],
       "extra": [
@@ -126,7 +146,9 @@
         }
       ],
       "reel": "https://www.instagram.com/ootw.yunseo/reel/De9Y_SfPp1P/",
-      "reelThumb": "img/ep001/ig-reel-2.webp"
+      "reelThumb": "img/ep001/ig-reel-2.webp",
+      "youtubeId": "",
+      "loopMp4": ""
     },
     {
       "name": "LOOK 3 · 크랜베리 × 차콜",
@@ -142,27 +164,37 @@
           "cat": "가디건",
           "name": "온유어리 로즈 캐시울 가디건",
           "color": "크랜베리",
-          "url": "https://applink.a-bly.com/hqpbjvm"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/hqpbjvm",
+          "similar": false
         },
         {
           "cat": "스커트",
           "name": "모직 플리츠 롱스커트",
           "color": "차콜",
-          "url": "https://applink.a-bly.com/4nciy91"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/4nciy91",
+          "similar": false
         },
         {
           "cat": "슈즈",
           "name": "베이직 스퀘어토 플랫",
           "color": "블랙",
-          "url": "https://applink.a-bly.com/klu4m0g"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/klu4m0g",
+          "similar": false
         },
         {
           "cat": "머플러",
           "name": "미니 니트 머플러",
           "color": "베이지",
-          "url": "https://applink.a-bly.com/1n6bhaf"
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/1n6bhaf",
+          "similar": false
         }
-      ]
+      ],
+      "youtubeId": "",
+      "loopMp4": ""
     }
   ]
 }

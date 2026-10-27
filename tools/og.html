@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>공유 미리보기 사진 만들기 · 윤서의 룩북</title>
+<style>
+  :root{--bg:#faf6f1;--ink:#2b2622;--sub:#665c55;--line:#ebe3d9;--accent-text:#8a5a43;--soft:#f3ebe2}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",system-ui,sans-serif;word-break:keep-all;padding:24px 16px 48px}
+  main{max-width:860px;margin:0 auto;display:grid;gap:16px}
+  h1{font-size:22px;letter-spacing:-.03em}
+  p,li{color:var(--sub);font-size:14px}
+  form{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  input{width:90px;min-height:40px;padding:0 10px;border:1px solid var(--line);border-radius:10px;font:inherit}
+  button,.btn{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:0;border-radius:10px;background:var(--ink);color:#fff;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}
+  .btn[aria-disabled=true]{opacity:.4;pointer-events:none}
+  canvas{width:100%;height:auto;border-radius:12px;box-shadow:0 0 0 1px var(--line)}
+  ol{padding-left:20px;display:grid;gap:4px}
+  code{background:var(--soft);padding:1px 5px;border-radius:5px;font-size:13px}
+  #msg{min-height:1.6em}
+</style>
+</head>
+<body>
+<main>
+  <h1>공유 미리보기 사진 만들기</h1>
+  <p>EP의 사진과 제목으로 카톡·인스타 DM 링크 미리보기 사진(1200×630 JPG)을 만듭니다. 사이트에 올라간 다음 이 주소에서 열어 주세요(내 컴퓨터 파일로 열면 사진을 못 읽어요).</p>
+  <form id="pick"><label>EP 번호 <input name="ep" inputmode="numeric" placeholder="003"></label><button>만들기</button></form>
+  <p id="msg" role="status"></p>
+  <canvas id="og" width="1200" height="630" aria-label="미리보기 사진"></canvas>
+  <p><a class="btn" id="save" download="og.jpg" aria-disabled="true">og.jpg 내려받기</a></p>
+  <ol>
+    <li>내려받은 <code>og.jpg</code>를 <code id="dest">img/epNNN/og.jpg</code> 자리에 올립니다.</li>
+    <li><code>node tools/build.mjs</code>를 다시 돌리면 그 EP 페이지의 미리보기 사진이 이걸로 바뀝니다.</li>
+    <li>이미 카톡에 한 번 붙여 본 주소면 카톡이 옛 미리보기를 기억하고 있어요. 카카오 개발자 사이트의 공유 디버거에서 그 주소의 캐시를 지워 주세요.</li>
+  </ol>
+  <p>카톡은 이 사진을 가운데 기준 2:1(800×400)로 줄여 보여 줘서 위아래가 조금 잘려요. 그래서 글자는 가운데 쪽에만 둡니다.</p>
+</main>
+<script>
+// 틀: 왼쪽은 크림 바탕에 EP 번호·큰 제목·날씨·'AI 가상인물' 표시, 오른쪽은 룩 사진 1~3장(룩이 여럿이면 룩마다, 하나면 그 룩의 사진들)
+const W = 1200, H = 630;
+const C = { bg: '#faf6f1', ink: '#2b2622', sub: '#665c55', accent: '#8a5a43', soft: '#f3ebe2' };
+const FONT = '"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Noto Sans CJK KR",system-ui,sans-serif';
+const $ = s => document.querySelector(s);
+const canvas = $('#og'), ctx = canvas.getContext('2d'), save = $('#save'), msg = $('#msg');
+
+const load = src => new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => no(new Error(src)); i.src = src; });
+// 사진을 칸에 꽉 채워 자른다. 위아래로 잘라야 하면 얼굴이 남도록 위쪽을 덜 자른다
+function cover(img, x, y, w, h) {
+  const s = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+  const sw = w / s, sh = h / s;
+  ctx.drawImage(img, (img.naturalWidth - sw) / 2, (img.naturalHeight - sh) * 0.2, sw, sh, x, y, w, h);
+}
+const font = (weight, size) => { ctx.font = `${weight} ${size}px ${FONT}`; };
+// 줄이 칸보다 길면 띄어쓰기 기준으로 나눈다
+function wrap(text, maxW) {
+  const out = [];
+  for (const para of text.split('\n')) {
+    let line = '';
+    for (const word of para.split(' ')) {
+      const t = line ? `${line} ${word}` : word;
+      if (line && ctx.measureText(t).width > maxW) { out.push(line); line = word; } else line = t;
+    }
+    out.push(line);
+  }
+  return out;
+}
+function pill(x, y, text) {
+  font(700, 22);
+  const w = ctx.measureText(text).width + 32, h = 40, r = 20;
+  ctx.fillStyle = C.soft;
+  ctx.beginPath();
+  ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = C.accent; ctx.textBaseline = 'middle'; ctx.fillText(text, x + 16, y + h / 2 + 1);
+  return w;
+}
+
+async function draw(ep) {
+  save.setAttribute('aria-disabled', 'true'); msg.textContent = `EP.${ep} 그리는 중…`;
+  const r = await fetch(`../data/looks/${ep}.json`, { cache: 'no-cache' });
+  if (!r.ok) throw new Error(`data/looks/${ep}.json을 못 찾았어요`);
+  const look = await r.json();
+  const multi = look.sets.length > 1;
+  const srcs = (multi ? look.sets.map(s => s.image) : [look.sets[0].image, ...(look.sets[0].extra || []).map(m => m.image)]).slice(0, 3);
+  const imgs = await Promise.all(srcs.map(s => load(/^[a-z]+:|^\//i.test(s) ? s : `../${s}`)));
+
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
+  // 사진: 1장이면 9:16 그대로(354), 2장이면 300씩, 3장이면 220씩. 사이 8px은 바탕색
+  const n = imgs.length, pw = n === 1 ? 354 : n === 2 ? 300 : 220, gap = 8;
+  const photosW = pw * n + gap * (n - 1);
+  imgs.forEach((img, i) => cover(img, W - photosW + i * (pw + gap), 0, pw, H));
+
+  // 글자: 왼쪽 칸 안에서
+  const left = 64, maxW = W - photosW - left - 48;
+  ctx.textBaseline = 'alphabetic';
+  font(700, 22); ctx.fillStyle = C.accent;
+  ctx.fillText([`EP.${look.id}`, look.date ? look.date.slice(5).replace('-', '.') : ''].filter(Boolean).join(' · '), left, 168);
+
+  // 큰 제목: 글쓴이가 \n으로 나눈 줄을 그대로 살리도록 먼저 글자 크기를 줄여 보고(40까지), 그래도 넘치면 띄어쓰기에서 나눈다
+  const head = look.headline || look.title;
+  let size = 60, lines = head.split('\n');
+  const tooWide = () => lines.some(l => ctx.measureText(l).width > maxW);
+  font(800, size);
+  while (size > 40 && tooWide()) font(800, size -= 2);
+  if (tooWide()) lines = wrap(head, maxW);
+  while (lines.length > 3 && size > 32) { font(800, size -= 2); lines = wrap(head, maxW); }
+  ctx.fillStyle = C.ink;
+  const lh = Math.round(size * 1.28);
+  lines.slice(0, 3).forEach((l, i) => ctx.fillText(l, left, 168 + 22 + lh * (i + 1)));
+  let y = 168 + 22 + lh * Math.min(lines.length, 3) + 54;
+
+  const w = look.weather;
+  const sub = [w && [w.temp, w.note].filter(Boolean).join(' · '), multi ? `룩 ${look.sets.length}벌` : ''].filter(Boolean).join(' · ');
+  if (sub) { font(500, 24); ctx.fillStyle = C.sub; ctx.fillText(wrap(sub, maxW)[0], left, y); }
+
+  // 아래: 'AI 가상인물' 표시 + 계정
+  const pw2 = pill(left, 506, 'AI 가상인물');
+  font(500, 22); ctx.fillStyle = C.sub; ctx.textBaseline = 'middle';
+  ctx.fillText('윤서의 룩북 · @ootw.yunseo', left + pw2 + 16, 527);
+
+  canvas.toBlob(b => {
+    if (save.href) URL.revokeObjectURL(save.href);
+    save.href = URL.createObjectURL(b);
+    save.setAttribute('aria-disabled', 'false');
+    $('#dest').textContent = `img/ep${look.id}/og.jpg`;
+    msg.textContent = `EP.${look.id} 완성. 내려받아 img/ep${look.id}/og.jpg 로 올려 주세요.`;
+    document.body.dataset.ready = look.id;
+  }, 'image/jpeg', 0.88);
+}
+
+const start = ep => {
+  const id = String(ep || '').replace(/\D/g, '').padStart(3, '0');
+  if (id === '000') { msg.textContent = 'EP 번호를 넣어 주세요.'; return; }
+  history.replaceState(null, '', `?ep=${id}`);
+  draw(id).catch(e => { msg.textContent = `만들지 못했어요: ${e.message}`; });
+};
+$('#pick').onsubmit = e => { e.preventDefault(); start(new FormData(e.target).get('ep')); };
+const q = new URLSearchParams(location.search).get('ep');
+if (q) { $('#pick').ep.value = q; start(q); }
+</script>
+</body>
+</html>

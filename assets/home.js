@@ -1,5 +1,5 @@
-// 룩북: data/looks/001.json, 002.json ... 을 순서대로 찾아 불러와 룩(세트)마다 카드 하나로 보여 줍니다.
-// 새 룩 추가 = 다음 번호의 JSON 하나 + 이미지 폴더만 추가하면 끝. 위쪽 '룩 지도'(상황·컬러·아이템)는 JSON에서 저절로 만들어집니다.
+// 룩북: data/looks/index.json에 적힌 번호의 EP(001.json, 002.json …)를 불러와 룩(세트)마다 카드 하나로 보여 줍니다.
+// 새 룩 추가 = 다음 번호의 JSON 하나 + 이미지 폴더 + `node tools/build.mjs` (README). 위쪽 '룩 지도'(상황·컬러·아이템)는 JSON에서 저절로 만들어집니다.
 const SITUATIONS = { 카페: '☕', 데이트: '💐', 주말: '🧺', 산책: '🍂', 저녁약속: '🍷', 하객: '🎀', 여행: '🧳' };
 const ITEMS = ['아우터', '가디건', '니트', '블라우스', '셔츠', '티셔츠', '원피스', '스커트', '데님', '팬츠', '슈즈', '가방', '머플러', '주얼리'];
 // 아이템의 색 이름 → 지도의 색 묶음: [묶음 이름, 견본색, 이 묶음에 드는 색 이름]. 새 색이 나오면 여기에 더한다
@@ -16,6 +16,20 @@ const pad = n => String(n).padStart(3, '0');
 const fmtDate = d => (d ? d.slice(5).replace('-', '.') : '');
 const rank = (list, v) => { const i = list.indexOf(v); return i < 0 ? 99 : i; };
 const iga = w => ((w.charCodeAt(w.length - 1) - 0xac00) % 28 ? '이' : '가'); // 받침 있으면 '이'
+const byNewest = (a, b) => b.id.localeCompare(a.id);
+const isHttps = u => { try { return new URL(u).protocol === 'https:'; } catch { return false; } };
+// 유튜브 영상 번호(11자). 주소를 그대로 넣어도 번호만 뽑는다 (assets/look.js와 같은 규칙)
+const ytId = v => {
+  const s = String(v || '').trim();
+  if (/^[\w-]{11}$/.test(s)) return s;
+  try {
+    const u = new URL(s);
+    if (!/(^|\.)(youtube\.com|youtube-nocookie\.com|youtu\.be)$/.test(u.hostname)) return '';
+    const m = u.pathname.match(/^\/(?:shorts|embed|live)\/([\w-]{11})/) || (u.hostname.endsWith('youtu.be') ? u.pathname.match(/^\/([\w-]{11})/) : null);
+    const id = m ? m[1] : u.searchParams.get('v') || '';
+    return /^[\w-]{11}$/.test(id) ? id : '';
+  } catch { return ''; }
+};
 
 // 없는 번호(404)는 목록의 끝, 그 밖의 실패는 오류로 본다
 async function getLook(n) {
@@ -27,16 +41,19 @@ async function getLook(n) {
   } catch { return { error: true }; }
 }
 
-// data/looks/index.json(번호 목록)이 있으면 그 번호만 불러와서 없는 번호를 찔러 보지 않는다(콘솔 404 없음).
+// data/looks/index.json: tools/build.mjs가 쓰는 {"ids": [...], "pages": true} 또는 예전 형식 ["001", ...].
+// pages가 true면 카드가 EP별 페이지(looks/001/, 공유 미리보기가 그 룩으로 뜸)로, 아니면 look.html?ep=001로 간다.
 // 목록이 없으면 예전처럼 001부터 차례로 찾아본다
 async function loadLooks() {
   try {
     const r = await fetch('data/looks/index.json', { cache: 'no-cache' });
     if (r.ok) {
-      const ids = await r.json();
+      const raw = await r.json();
+      const ids = Array.isArray(raw) ? raw : raw.ids;
+      if (!Array.isArray(ids)) throw new Error('index');
       const got = await Promise.all(ids.map(id => getLook(Number(id))));
       if (got.some(b => b.error || b.missing)) throw new Error('load');
-      return got.map(b => b.look).sort((a, b) => b.id.localeCompare(a.id));
+      return { eps: got.map(b => b.look).sort(byNewest), pages: raw.pages === true };
     }
   } catch (e) { if (e.message === 'load') throw e; }
   const looks = [];
@@ -46,7 +63,7 @@ async function loadLooks() {
     looks.push(...batch.filter(b => b.look).map(b => b.look));
     if (batch.some(b => b.missing)) break;
   }
-  return looks.sort((a, b) => b.id.localeCompare(a.id));
+  return { eps: looks.sort(byNewest), pages: false };
 }
 
 function h(tag, attrs = {}, ...kids) {
@@ -59,18 +76,22 @@ function h(tag, attrs = {}, ...kids) {
 }
 
 // EP 하나를 룩(세트) 단위로 펼친다. 지도에서 쓰는 열쇠: '상황:카페', '컬러:브라운', '아이템:아우터'
-function looksOf(ep) {
+// 아이템은 주소가 있는 것만 센다(주소가 빈 칸 = 아직 안 쓰는 쿠팡·무신사 자리)
+function looksOf(ep, pages) {
   const multi = ep.sets.length > 1;
+  const page = pages ? `looks/${ep.id}/` : `look.html?ep=${ep.id}`;
   return ep.sets.map((s, i) => {
+    const items = (s.items || []).filter(it => isHttps(it.url));
     const keys = new Set((s.tags || ep.tags || []).map(t => '상황:' + t));
-    for (const it of s.items) {
+    for (const it of items) {
       if (it.cat) keys.add('아이템:' + it.cat);
       const f = familyOf(it.color); if (f) keys.add('컬러:' + f);
     }
-    const page = `look.html?ep=${ep.id}`;
+    // 쇼츠가 있는 룩은 EP 배지 안에만 ▶ 표시 (따로 누르는 곳을 만들지 않는다. 카드의 사진·이름은 모두 같은 곳으로)
+    const short = !!(ytId(s.youtubeId) || (i === 0 && ytId(ep.youtubeId)));
     return {
-      ep, s, keys, id: `${ep.id}-${i + 1}`,
-      badge: multi ? `EP.${ep.id} · ${s.name.split('·')[0].trim()}` : `EP.${ep.id}`,
+      ep, s, items, keys, short, id: `${ep.id}-${i + 1}`,
+      badge: (multi ? `EP.${ep.id} · ${s.name.split('·')[0].trim()}` : `EP.${ep.id}`) + (short ? ' ▶︎' : ''),
       title: s.name.split('·').pop().trim(), // 상세에서 사진 아래 붙는 룩 이름과 같게
       href: `${page}#set-${i + 1}`, // 사진·이름 → 그 룩의 사진
       itemsHref: `${page}#${i === 0 ? 'items' : `items-${i + 1}`}`, // '아이템 N개 보기' → 그 룩의 아이템 목록
@@ -88,11 +109,11 @@ function card(l, n) {
       img, h('span', { class: 'ep', text: l.badge })),
     h('div', { class: 'card-body' },
       h('p', { class: 'meta', text: [fmtDate(l.ep.date), l.ep.weather && `🌤 ${l.ep.weather.temp}`].filter(Boolean).join(' · ') }),
-      h('h3', {}, h('a', { href: l.href, text: l.title })),
+      h('h3', {}, h('a', { href: l.href }, l.title, l.short ? h('span', { class: 'sr', text: ' (쇼츠 영상 있음)' }) : null)),
       l.s.mood ? h('p', { class: 'mood', text: l.s.mood }) : null,
       match,
       h('span', { class: 'grow' }),
-      h('a', { class: 'btn solid small', href: l.itemsHref, text: `아이템 ${l.s.items.length}개 보기` })));
+      l.items.length ? h('a', { class: 'btn solid small', href: l.itemsHref, text: `아이템 ${l.items.length}개 보기` }) : null));
   return { el, match, l };
 }
 
@@ -140,8 +161,8 @@ function sortCards(cards, order) {
   });
 }
 
-function render(eps) {
-  const looks = eps.flatMap(looksOf);
+function render({ eps, pages }) {
+  const looks = eps.flatMap(ep => looksOf(ep, pages));
   const cards = looks.map((l, n) => ({ ...card(l, n), n }));
   const grid = document.getElementById('grid');
   let order = sessionStorage.getItem('yunseo-sort') === '오래된순' ? '오래된순' : '최신순';
@@ -174,7 +195,7 @@ function render(eps) {
         const on = !key || c.l.keys.has(key);
         c.el.hidden = !on; if (on) shown++;
         // 컬러·아이템으로 고르면 그 룩에서 해당하는 아이템 이름을 카드에 보여 준다
-        const hit = on && g !== '상황' && key ? c.l.s.items.filter(it => (g === '컬러' ? familyOf(it.color) === v : it.cat === v)) : [];
+        const hit = on && g !== '상황' && key ? c.l.items.filter(it => (g === '컬러' ? familyOf(it.color) === v : it.cat === v)) : [];
         c.match.replaceChildren(...(hit.length ? [h('b', { text: v }), hit.map(it => it.name).join(', ')] : []));
         c.match.hidden = !hit.length;
       }
