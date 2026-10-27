@@ -1,33 +1,100 @@
 {
   "id": "010",
   "date": "2026-10-27",
-  "title": "퇴근 후 저녁약속, 뭐 입지?",
-  "headline": "퇴근 후 저녁약속,\n뭐 입지?",
-  "summary": "블랙 골지 티에 화이트 패딩 툭, 버건디 코듀로이로 포인트. 통굽 스니커즈로 편하게 입는 저녁약속 룩.",
-  "description": "불빛 켜진 골목 걷던 날. 블랙 골지 티에 화이트 패딩을 툭 걸치고, 버건디 코듀로이로 포인트를 줬어요. 신발은 통굽 스니커즈로 편하게. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
-  "tags": ["저녁약속", "데이트"],
+  "title": "퇴근하고 한강 노을 보러 가는 날, 뭐 입지?",
+  "headline": "퇴근하고 한강 노을\n보러 가는 날, 뭐 입지?",
+  "summary": "블랙 골지 티에 화이트 패딩 툭, 버건디 코듀로이로 포인트. 통굽 스니커즈로 편하게 입는 한강 노을 룩.",
+  "description": "퇴근하고 한강에 노을 보러 간 날. 블랙 골지 티에 화이트 패딩을 툭 걸치고, 버건디 코듀로이로 포인트를 줬어요. 신발은 통굽 스니커즈로 편하게. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "데이트"
+  ],
   "palette": [
-    ["블랙", "#2f2b29"],
-    ["화이트", "#f4efe6"],
-    ["버건디", "#7d2638"]
+    [
+      "블랙",
+      "#2f2b29"
+    ],
+    [
+      "화이트",
+      "#f4efe6"
+    ],
+    [
+      "버건디",
+      "#7d2638"
+    ]
   ],
   "cover": "img/ep010/1-s.webp",
   "sets": [
     {
-      "name": "퇴근 후 저녁약속 룩",
-      "mood": "불빛 켜진 골목 걷던 날",
+      "name": "퇴근하고 한강 노을 룩",
+      "mood": "퇴근하고 한강 노을 보러 가는 날",
       "image": "img/ep010/1.webp",
-      "alt": "불빛 켜진 11월 밤 골목에서 블랙 골지 티에 화이트 패딩, 버건디 코듀로이 팬츠를 입은 윤서",
-      "reel": "https://www.instagram.com/reel/De_8tAav71O/",
+      "alt": "노을 지는 한강 산책로에서 블랙 골지 티에 화이트 패딩, 버건디 코듀로이 팬츠를 입고 서 있는 윤서",
+      "reel": "",
       "youtubeId": "",
       "loopMp4": "img/ep010/clip.mp4",
       "items": [
-        { "cat": "티셔츠", "name": "슬림 골지 티", "color": "블랙", "shop": "에이블리", "url": "https://applink.a-bly.com/ijhwd44", "similar": false },
-        { "cat": "아우터", "name": "니트패딩", "color": "화이트", "shop": "에이블리", "url": "https://applink.a-bly.com/hsw29mb", "similar": true },
-        { "cat": "팬츠", "name": "코듀로이 팬츠", "color": "버건디", "shop": "에이블리", "url": "https://applink.a-bly.com/f0aipjd", "similar": false },
-        { "cat": "슈즈", "name": "통굽 스니커즈", "color": "블랙", "shop": "에이블리", "url": "https://applink.a-bly.com/ojgx2sv", "similar": false },
-        { "cat": "가방", "name": "셔링 미니 토트", "color": "블랙", "shop": "에이블리", "url": "https://applink.a-bly.com/hkb5hoo", "similar": true },
-        { "cat": "주얼리", "name": "실버 링귀걸이", "color": "", "shop": "에이블리", "url": "https://applink.a-bly.com/h2c2znc", "similar": false }
+        {
+          "cat": "티셔츠",
+          "name": "슬림 골지 티",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/ijhwd44",
+          "similar": false
+        },
+        {
+          "cat": "아우터",
+          "name": "니트패딩",
+          "color": "화이트",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/hsw29mb",
+          "similar": true
+        },
+        {
+          "cat": "팬츠",
+          "name": "코듀로이 팬츠",
+          "color": "버건디",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/f0aipjd",
+          "similar": false
+        },
+        {
+          "cat": "슈즈",
+          "name": "통굽 스니커즈",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/ojgx2sv",
+          "similar": false
+        },
+        {
+          "cat": "주얼리",
+          "name": "실버 링귀걸이",
+          "color": "",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/h2c2znc",
+          "similar": false
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep010/1b.webp",
+          "alt": "한강 노을 앞에서 화이트 패딩 주머니에 손을 넣고 서 있는 윤서의 전신"
+        },
+        {
+          "image": "img/ep010/1c.webp",
+          "alt": "바람에 머리카락이 날리는 한강 산책로에서 걸어오는 윤서의 전신"
+        },
+        {
+          "image": "img/ep010/1d.webp",
+          "alt": "화이트 패딩 뒷모습과 버건디 코듀로이 팬츠 뒤태 (한강 노을)"
+        },
+        {
+          "image": "img/ep010/1e.webp",
+          "alt": "환하게 웃는 윤서의 상반신, 화이트 패딩과 블랙 골지 티, 코듀로이 팬츠 (한강 노을)"
+        },
+        {
+          "image": "img/ep010/1f.webp",
+          "alt": "카메라를 향해 웃으며 손가락을 내미는 윤서의 상반신 클로즈업 (한강 노을)"
+        }
       ]
     }
   ]
