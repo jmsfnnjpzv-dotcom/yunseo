@@ -25,8 +25,8 @@ function h(tag, attrs = {}, ...kids) {
   return el;
 }
 const safe = u => { try { const x = new URL(u); return x.protocol === 'https:' ? x.href : null; } catch { return null; } };
-// "LOOK 1 · 크림 × 브라운" → "LOOK 1". 이름에 '·'가 없으면 순서로 붙인다
-const lookNo = (s, i) => (s.name.includes('·') ? s.name.split('·')[0].trim() : `LOOK ${i + 1}`);
+// 여러 벌일 때 구분은 번호 대신 코디 이름으로 ("크림 × 브라운")
+const lookNo = (s, i) => (s.name || '').replace(/^LOOK\s*\d+\s*·\s*/, '').trim() || `${i + 1}번째 코디`;
 // 화면에 나오는 아이템 = 주소가 있는 것만. 주소가 빈 칸(아직 안 쓰는 쿠팡·무신사 자리)은 보이지도, 세지도 않는다
 const itemsOf = s => (s.items || []).filter(it => safe(it.url));
 const shopOf = it => {
