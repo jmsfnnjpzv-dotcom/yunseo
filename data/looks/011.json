@@ -1,0 +1,101 @@
+{
+  "id": "011",
+  "date": "2026-10-28",
+  "season": "가을",
+  "title": "늦가을 오후, 고궁 돌담길 따라 천천히",
+  "headline": "늦가을 오후, 고궁 돌담길\n따라 천천히",
+  "summary": "모카 니트 원피스에 초코 벨트, 브라운 롱부츠로 톤온톤. 고궁 돌담길을 천천히 걷는 늦가을 오후 룩.",
+  "description": "늦가을 오후, 고궁 돌담길을 천천히 걸은 날. 모카 니트 원피스에 초코 벨트로 허리를 잡고, 브라운 롱부츠랑 스웨이드 숄더백으로 톤을 맞췄어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "데이트",
+    "주말"
+  ],
+  "palette": [
+    [
+      "모카",
+      "#8b6b4a"
+    ],
+    [
+      "초코",
+      "#4a3428"
+    ],
+    [
+      "진주",
+      "#f2ebe3"
+    ]
+  ],
+  "cover": "img/ep011/1-s.webp",
+  "sets": [
+    {
+      "name": "모카 × 브라운",
+      "mood": "늦가을 오후, 고궁 돌담길 따라 천천히",
+      "image": "img/ep011/1.webp",
+      "alt": "고궁 돌담길에서 모카 니트 원피스와 초코 벨트, 브라운 롱부츠를 입고 서 있는 윤서",
+      "loopMp4": "img/ep011/clip.mp4",
+      "items": [
+        {
+          "cat": "원피스",
+          "name": "브이넥 롱 맥시 니트 원피스",
+          "color": "브라운",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/11285887",
+          "similar": true
+        },
+        {
+          "cat": "벨트",
+          "name": "심플 레더 벨트",
+          "color": "초코",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/42488588",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "스웨이드 웨스턴 롱부츠",
+          "color": "브라운",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/33438801",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "스웨이드 반달 숄더백",
+          "color": "커피",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/34207283",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "진주 귀걸이",
+          "color": "",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/3301469",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep011/1b.webp",
+          "alt": "고궁 돌담길에서 카메라를 향해 웃는 윤서의 상반신"
+        },
+        {
+          "image": "img/ep011/1c.webp",
+          "alt": "어깨 너머로 뒤를 돌아보며 웃는 윤서"
+        },
+        {
+          "image": "img/ep011/1d.webp",
+          "alt": "머리카락을 귀 뒤로 넘기는 윤서의 상반신"
+        },
+        {
+          "image": "img/ep011/1e.webp",
+          "alt": "손을 작게 흔들며 웃는 윤서"
+        },
+        {
+          "image": "img/ep011/1f.webp",
+          "alt": "고궁 돌담길 앞에서 미소 짓는 윤서의 클로즈업"
+        }
+      ]
+    }
+  ]
+}
