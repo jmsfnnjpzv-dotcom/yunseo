@@ -1,0 +1,96 @@
+{
+  "id": "014",
+  "date": "2026-10-28",
+  "season": "겨울",
+  "title": "호텔 라운지 트리 앞에서, 그린 원피스 입고",
+  "headline": "호텔 라운지 트리 앞에서,\n그린 원피스 입고",
+  "summary": "포레스트 그린 맥시에 아이보리 가디건, 블랙 부츠와 셔링 토트. 호텔 파티 그린 × 블랙 룩.",
+  "description": "호텔 라운지 트리 앞에서, 그린 맥시 원피스에 아이보리 가디건을 걸친 날. 블랙 부츠랑 셔링 토트, 진주 귀걸이로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "파티",
+    "연말"
+  ],
+  "palette": [
+    [
+      "그린",
+      "#2d5a3d"
+    ],
+    [
+      "아이보리",
+      "#f4efe6"
+    ],
+    [
+      "블랙",
+      "#2f2b29"
+    ]
+  ],
+  "cover": "img/ep014/1-s.webp",
+  "sets": [
+    {
+      "name": "그린 × 블랙",
+      "mood": "호텔 라운지 트리 앞에서, 그린 원피스 입고",
+      "image": "img/ep014/1.webp",
+      "alt": "호텔 라운지에서 그린 원피스와 아이보리 가디건을 입고 서 있는 윤서",
+      "loopMp4": "img/ep014/clip.mp4",
+      "items": [
+        {
+          "cat": "원피스",
+          "name": "스모크 맥시 원피스",
+          "color": "그린",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/1189878",
+          "similar": true
+        },
+        {
+          "cat": "가디건",
+          "name": "꽈배기 케이블 가디건",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/29767154",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "첼시 부츠",
+          "color": "숏블랙",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/3066033",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "셔링 토트",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/5275609",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "진주 귀걸이",
+          "color": "진주ver",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/33460126",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep014/1b.webp",
+          "alt": "트리 옆에서 웃으며 서 있는 윤서"
+        },
+        {
+          "image": "img/ep014/1c.webp",
+          "alt": "그린 맥시 전신이 보이는 컷"
+        },
+        {
+          "image": "img/ep014/1d.webp",
+          "alt": "가디건을 걸치고 가방을 든 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    }
+  ],
+  "instagram": ""
+}
