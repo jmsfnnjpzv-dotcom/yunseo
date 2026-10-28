@@ -1,0 +1,104 @@
+{
+  "id": "012",
+  "date": "2026-10-28",
+  "season": "가을",
+  "title": "버스정류장 저녁, 카멜 코트 입고 서성이다가",
+  "headline": "버스정류장 저녁,\n카멜 코트 입고 서성이다가",
+  "summary": "카멜 롱코트에 아이보리 목폴라, 블랙 플리츠 스커트와 삭스부츠. 버스정류장 저녁 카멜 × 블랙 룩.",
+  "description": "버스정류장 저녁, 카멜 롱코트에 아이보리 목폴라를 입고 서성인 날. 블랙 플리츠 스커트랑 삭스부츠, 미니 보스턴백으로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "데이트",
+    "산책"
+  ],
+  "palette": [
+    [
+      "카멜",
+      "#c4a06a"
+    ],
+    [
+      "아이보리",
+      "#f4efe6"
+    ],
+    [
+      "블랙",
+      "#2f2b29"
+    ]
+  ],
+  "cover": "img/ep012/1-s.webp",
+  "sets": [
+    {
+      "name": "카멜 × 블랙",
+      "mood": "버스정류장 저녁, 카멜 코트 입고 서성이다가",
+      "image": "img/ep012/1.webp",
+      "alt": "버스정류장 앞에서 카멜 롱코트와 아이보리 목폴라, 블랙 플리츠 스커트를 입고 서 있는 윤서",
+      "loopMp4": "img/ep012/clip.mp4",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "모직 롱코트",
+          "color": "카멜",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/10771861",
+          "similar": true
+        },
+        {
+          "cat": "니트",
+          "name": "슬림 목폴라",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/4935492",
+          "similar": true
+        },
+        {
+          "cat": "스커트",
+          "name": "플리츠 롱스커트",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/11280647",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "스웨이드 삭스부츠",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/11325369",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "미니 보스턴백",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/33113814",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "골드 링 귀걸이",
+          "color": "",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/27799558",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep012/1b.webp",
+          "alt": "버스정류장에서 V사인과 백킥 포즈를 취하는 윤서"
+        },
+        {
+          "image": "img/ep012/1c.webp",
+          "alt": "가방을 들고 웃으며 서 있는 윤서의 전신"
+        },
+        {
+          "image": "img/ep012/1d.webp",
+          "alt": "카멜 코트를 입고 살짝 쪽을 보는 윤서"
+        }
+      ],
+      "reel": "https://www.instagram.com/reel/DfCZQwZvjzh/",
+      "youtubeId": "GqCVmnhGq9U"
+    }
+  ],
+  "instagram": "https://www.instagram.com/p/DfCZky0FCOL/"
+}
