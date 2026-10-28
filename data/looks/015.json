@@ -1,0 +1,96 @@
+{
+  "id": "015",
+  "date": "2026-10-28",
+  "season": "겨울",
+  "title": "겨울 바다 보드워크, 딥스카이 니트 입고",
+  "headline": "겨울 바다 보드워크,\n딥스카이 니트 입고",
+  "summary": "딥스카이 니트에 크림 슬랙스, 아이보리 펌프스와 리본 미니백. 겨울 바다 딥스카이 × 크림 룩.",
+  "description": "겨울 바다 보드워크, 딥스카이 니트에 크림 슬랙스를 입고 걸은 날. 아이보리 펌프스랑 리본 미니백, 큐빅 진주 귀걸이로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "주말",
+    "여행"
+  ],
+  "palette": [
+    [
+      "딥스카이",
+      "#6BA4D8"
+    ],
+    [
+      "크림",
+      "#f4efe6"
+    ],
+    [
+      "화이트",
+      "#f7f7f5"
+    ]
+  ],
+  "cover": "img/ep015/1-s.webp",
+  "sets": [
+    {
+      "name": "딥스카이 × 크림",
+      "mood": "겨울 바다 보드워크, 딥스카이 니트 입고",
+      "image": "img/ep015/1.webp",
+      "alt": "겨울 바다 보드워크에서 딥스카이 니트와 크림 슬랙스를 입고 서 있는 윤서",
+      "loopMp4": "img/ep015/clip.mp4",
+      "items": [
+        {
+          "cat": "상의",
+          "name": "소프트덴스 니트",
+          "color": "스카이",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/oe6ys1m",
+          "similar": true
+        },
+        {
+          "cat": "팬츠",
+          "name": "핀턱 와이드 슬랙스",
+          "color": "크림",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/4lumsyy",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "몰드창 펌프스",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/mg9t2f1",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "리본 미니백",
+          "color": "화이트",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/7lqqebk",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "큐빅 진주 귀걸이",
+          "color": "화이트",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/0xam4d8",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep015/1b.webp",
+          "alt": "보드워크를 걸어오는 윤서"
+        },
+        {
+          "image": "img/ep015/1c.webp",
+          "alt": "크림 슬랙스 전신이 보이는 컷"
+        },
+        {
+          "image": "img/ep015/1d.webp",
+          "alt": "바다 앞에서 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    }
+  ],
+  "instagram": ""
+}

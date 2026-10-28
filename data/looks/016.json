@@ -1,0 +1,104 @@
+{
+  "id": "016",
+  "date": "2026-10-28",
+  "season": "겨울",
+  "title": "네온 라운지 입구, 블랙 코트 입고 서 있다가",
+  "headline": "네온 라운지 입구,\n블랙 코트 입고 서 있다가",
+  "summary": "블랙 하프코트에 아이보리 목폴라, 로퍼와 크로스백. 네온 라운지 블랙 × 아이보리 룩.",
+  "description": "네온 라운지 입구, 블랙 하프코트에 아이보리 목폴라를 입고 서 있던 날. 로퍼랑 크로스백, 미니 큐빅 리본 스터드로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "저녁",
+    "데이트"
+  ],
+  "palette": [
+    [
+      "블랙",
+      "#1a1a1a"
+    ],
+    [
+      "아이보리",
+      "#f4efe6"
+    ],
+    [
+      "네온",
+      "#e85a9b"
+    ]
+  ],
+  "cover": "img/ep016/1-s.webp",
+  "sets": [
+    {
+      "name": "블랙 × 아이보리",
+      "mood": "네온 라운지 입구, 블랙 코트 입고 서 있다가",
+      "image": "img/ep016/1.webp",
+      "alt": "네온 라운지 입구에서 블랙 코트와 아이보리 목폴라를 입고 서 있는 윤서",
+      "loopMp4": "img/ep016/clip.mp4",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "하프 더블 모직 코트",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/7lmg77b",
+          "similar": true
+        },
+        {
+          "cat": "니트",
+          "name": "울스킨 목폴라",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/vufpdeb",
+          "similar": true
+        },
+        {
+          "cat": "팬츠",
+          "name": "올데이 슬랙스",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/zxlq4iq",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "클래식 로퍼",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/h8lwms8",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "레더 지퍼 크로스백",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/z6qr6r1",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "미니 큐빅 리본 스터드",
+          "color": "",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/plwdqly",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep016/1b.webp",
+          "alt": "코트 주머니에 손을 넣고 서 있는 윤서"
+        },
+        {
+          "image": "img/ep016/1c.webp",
+          "alt": "블랙 코트 전신이 보이는 네온 컷"
+        },
+        {
+          "image": "img/ep016/1d.webp",
+          "alt": "살짝 쪽을 보는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    }
+  ],
+  "instagram": ""
+}
