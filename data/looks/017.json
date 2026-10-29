@@ -1,0 +1,96 @@
+{
+  "id": "017",
+  "date": "2026-10-29",
+  "season": "가을",
+  "title": "놀이공원 회전목마 앞에서, 인디핑크 니트 입고",
+  "headline": "놀이공원 회전목마 앞에서,\n인디핑크 니트 입고",
+  "summary": "인디핑크 니트에 차콜 플리츠 롱스커트, 메리제인과 아이보리 바게트. 놀이공원 회전목마 인디핑크 × 차콜 룩.",
+  "description": "놀이공원 회전목마 앞에서, 인디핑크 니트에 차콜 플리츠 롱스커트를 입고 서 있던 날. 메리제인이랑 아이보리 바게트, 미니 하트 귀걸이로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "데이트",
+    "낮"
+  ],
+  "palette": [
+    [
+      "인디핑크",
+      "#c98a94"
+    ],
+    [
+      "차콜",
+      "#4a4a4a"
+    ],
+    [
+      "아이보리",
+      "#f3ebe0"
+    ]
+  ],
+  "cover": "img/ep017/1-s.webp",
+  "sets": [
+    {
+      "name": "인디핑크 × 차콜",
+      "mood": "놀이공원 회전목마 앞에서, 인디핑크 니트 입고",
+      "image": "img/ep017/1.webp",
+      "alt": "놀이공원 회전목마 앞에서 인디핑크 니트와 차콜 플리츠를 입고 서 있는 윤서",
+      "loopMp4": "img/ep017/clip.mp4",
+      "items": [
+        {
+          "cat": "상의",
+          "name": "브이넥 오버핏 니트",
+          "color": "인디핑크",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/36825390",
+          "similar": true
+        },
+        {
+          "cat": "스커트",
+          "name": "웜플리츠 롱스커트",
+          "color": "차콜",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/11458751",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "메리제인",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/10535214",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "바게트 숄더백",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/9473857",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "미니 하트 귀걸이",
+          "color": "",
+          "shop": "에이블리",
+          "url": "https://m.a-bly.com/goods/1721932",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep017/1b.webp",
+          "alt": "가방끈을 잡고 고개를 갸웃하는 윤서"
+        },
+        {
+          "image": "img/ep017/1c.webp",
+          "alt": "어깨 너머로 돌아보며 웃는 윤서 전신"
+        },
+        {
+          "image": "img/ep017/1d.webp",
+          "alt": "회전목마 앞에서 손을 흔드는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "NVJK87hVGU8"
+    }
+  ],
+  "instagram": ""
+}
