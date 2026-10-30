@@ -1,0 +1,96 @@
+{
+  "id": "018",
+  "date": "2026-10-30",
+  "season": "가을",
+  "title": "서촌 헌책방 골목에서, 네이비 니트 입고",
+  "headline": "서촌 헌책방 골목에서,\n네이비 니트 입고",
+  "summary": "네이비 꽈배기 니트에 아이보리 캉캉 롱스커트, 로퍼와 브라운 가방. 서촌 헌책방 네이비 × 아이보리 룩.",
+  "description": "서촌 헌책방 골목에서, 네이비 꽈배기 니트에 아이보리 캉캉 롱스커트를 입고 서 있던 날. 로퍼랑 브라운 가방, 벨벳 진주 귀걸이로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "데이트",
+    "낮"
+  ],
+  "palette": [
+    [
+      "네이비",
+      "#1e3a5f"
+    ],
+    [
+      "아이보리",
+      "#f3efe6"
+    ],
+    [
+      "브라운",
+      "#8b5a3c"
+    ]
+  ],
+  "cover": "img/ep018/1-s.webp",
+  "sets": [
+    {
+      "name": "네이비 × 아이보리",
+      "mood": "서촌 헌책방 골목에서, 네이비 니트 입고",
+      "image": "img/ep018/1.webp",
+      "alt": "서촌 헌책방 골목에서 네이비 니트와 아이보리 캉캉을 입고 서 있는 윤서",
+      "loopMp4": "img/ep018/clip.mp4",
+      "items": [
+        {
+          "cat": "상의",
+          "name": "꽈배기 루즈핏 니트",
+          "color": "네이비",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/ovhc02o",
+          "similar": true
+        },
+        {
+          "cat": "스커트",
+          "name": "캉캉 플레어 롱스커트",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/7862rmc",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "페니 로퍼",
+          "color": "가죽브라운",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/xqq25n9",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "레더 숄더백",
+          "color": "브라운",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/7lq4wb9",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "벨벳 진주 귀걸이",
+          "color": "",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/tgosuqr",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep018/1b.webp",
+          "alt": "소매를 흔들며 웃는 윤서"
+        },
+        {
+          "image": "img/ep018/1c.webp",
+          "alt": "고개를 갸웃하며 웃는 윤서"
+        },
+        {
+          "image": "img/ep018/1d.webp",
+          "alt": "골목을 걸어오는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "2_5n7KdRvQY"
+    }
+  ],
+  "instagram": ""
+}
