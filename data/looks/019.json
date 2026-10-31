@@ -1,0 +1,96 @@
+{
+  "id": "019",
+  "date": "2026-10-31",
+  "season": "가을",
+  "title": "합정 카페거리에서, 그레이 가디건 입고",
+  "headline": "합정 카페거리에서,\n그레이 가디건 입고",
+  "summary": "그레이 앙고라 가디건에 블랙 플리츠 스커트, 발레플랫과 브라운 가방. 합정 카페거리 그레이 × 블랙 룩.",
+  "description": "합정 카페거리에서, 그레이 앙고라 가디건에 블랙 플리츠 스커트를 입고 서 있던 날. 리본 발레플랫이랑 브라운 호보백, 미니 링귀걸이로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "데이트",
+    "오후"
+  ],
+  "palette": [
+    [
+      "그레이",
+      "#b4b6c0"
+    ],
+    [
+      "블랙",
+      "#1a1a1a"
+    ],
+    [
+      "브라운",
+      "#8b5a3c"
+    ]
+  ],
+  "cover": "img/ep019/1-s.webp",
+  "sets": [
+    {
+      "name": "그레이 × 블랙",
+      "mood": "합정 카페거리에서, 그레이 가디건 입고",
+      "image": "img/ep019/1.webp",
+      "alt": "합정 카페거리에서 그레이 앙고라 가디건과 블랙 플리츠를 입고 서 있는 윤서",
+      "loopMp4": "img/ep019/clip.mp4",
+      "items": [
+        {
+          "cat": "상의",
+          "name": "앙고라 가디건",
+          "color": "그레이",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/qryuadn",
+          "similar": true
+        },
+        {
+          "cat": "스커트",
+          "name": "플리츠 롱스커트",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/2i4mck5",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "리본 발레플랫",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/dqmkdu4",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "스웨이드 반달 호보백",
+          "color": "브라운",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/xx1t1up",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "미니 링귀걸이",
+          "color": "골드",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/2mhe4wu",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep019/1b.webp",
+          "alt": "볼에 손을 대고 웃는 윤서"
+        },
+        {
+          "image": "img/ep019/1c.webp",
+          "alt": "한바퀴 돌고 밝게 웃는 윤서"
+        },
+        {
+          "image": "img/ep019/1d.webp",
+          "alt": "카메라 쪽으로 다가오며 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "s6SgYKqCuCk"
+    }
+  ],
+  "instagram": ""
+}
