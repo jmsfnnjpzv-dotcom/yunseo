@@ -1,0 +1,96 @@
+{
+  "id": "020",
+  "date": "2026-11-01",
+  "season": "가을",
+  "title": "익선동 한옥골목에서, 와인 가디건 입고",
+  "headline": "익선동 한옥골목에서,\n와인 가디건 입고",
+  "summary": "와인 가디건에 차콜 플리츠 스커트, 발레플랫과 아이보리 가방. 익선동 한옥골목 와인 × 차콜 룩.",
+  "description": "익선동 한옥골목에서, 와인 울혼방 가디건에 차콜 플리츠 스커트를 입고 서 있던 날. 리본 발레플랫이랑 아이보리 스퀘어 숄더백, 미니 링귀걸이로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "데이트",
+    "낮"
+  ],
+  "palette": [
+    [
+      "와인",
+      "#6b2d3c"
+    ],
+    [
+      "차콜",
+      "#3a3a3a"
+    ],
+    [
+      "아이보리",
+      "#f3efe6"
+    ]
+  ],
+  "cover": "img/ep020/1-s.webp",
+  "sets": [
+    {
+      "name": "와인 × 차콜",
+      "mood": "익선동 한옥골목에서, 와인 가디건 입고",
+      "image": "img/ep020/1.webp",
+      "alt": "익선동 한옥골목에서 와인 가디건과 차콜 플리츠를 입고 서 있는 윤서",
+      "loopMp4": "img/ep020/clip.mp4",
+      "items": [
+        {
+          "cat": "상의",
+          "name": "울혼방 브이넥 가디건",
+          "color": "와인",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/s24bpq4",
+          "similar": true
+        },
+        {
+          "cat": "스커트",
+          "name": "플리츠 롱스커트",
+          "color": "차콜",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/4nciy91",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "리본 발레플랫",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/dqmkdu4",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "스퀘어 숄더백",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/j4v6zu3",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "미니 링귀걸이",
+          "color": "골드",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/2mhe4wu",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep020/1b.webp",
+          "alt": "소매로 입을 가리며 웃는 윤서"
+        },
+        {
+          "image": "img/ep020/1c.webp",
+          "alt": "밝게 웃으며 서 있는 윤서"
+        },
+        {
+          "image": "img/ep020/1d.webp",
+          "alt": "카메라 쪽으로 다가오며 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "ktBhz9CdLew"
+    }
+  ],
+  "instagram": ""
+}
