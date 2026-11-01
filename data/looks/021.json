@@ -1,0 +1,96 @@
+{
+  "id": "021",
+  "date": "2026-11-01",
+  "season": "가을",
+  "title": "성수 카페골목에서, 버터옐로우 가디건 입고",
+  "headline": "성수 카페골목에서,\n버터옐로우 가디건 입고",
+  "summary": "버터옐로우 가디건에 연청 와이드 데님, 발레플랫과 브라운 가방. 성수 카페골목 버터옐로우 × 연청 룩.",
+  "description": "성수 카페골목에서, 버터옐로우 도톰 가디건에 연청 와이드 데님을 입고 서 있던 날. 리본 발레플랫이랑 브라운 스웨이드 호보백, 진주 귀걸이로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "데이트",
+    "오후"
+  ],
+  "palette": [
+    [
+      "버터옐로우",
+      "#e8c86a"
+    ],
+    [
+      "연청",
+      "#9bb5c8"
+    ],
+    [
+      "브라운",
+      "#6b4a35"
+    ]
+  ],
+  "cover": "img/ep021/1-s.webp",
+  "sets": [
+    {
+      "name": "버터옐로우 × 연청",
+      "mood": "성수 카페골목에서, 버터옐로우 가디건 입고",
+      "image": "img/ep021/1.webp",
+      "alt": "성수 빨간 벽돌 앞에서 버터옐로우 가디건과 연청 와이드를 입고 서 있는 윤서",
+      "loopMp4": "img/ep021/clip.mp4",
+      "items": [
+        {
+          "cat": "상의",
+          "name": "도톰 비조 가디건",
+          "color": "버터옐로우",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/92euzf2",
+          "similar": true
+        },
+        {
+          "cat": "팬츠",
+          "name": "와이드 데님",
+          "color": "연청",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/5j0fdet",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "리본 발레플랫",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/i32uybi",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "스웨이드 호보백",
+          "color": "브라운",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/5mgkmx1",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "진주 귀걸이",
+          "color": "8mm",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/nr4b3pc",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep021/1b.webp",
+          "alt": "걸어오며 웃는 윤서"
+        },
+        {
+          "image": "img/ep021/1c.webp",
+          "alt": "미디엄샷으로 웃는 윤서"
+        },
+        {
+          "image": "img/ep021/1d.webp",
+          "alt": "카메라 쪽으로 다가오며 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "kgRX2ibSPDE"
+    }
+  ],
+  "instagram": ""
+}
