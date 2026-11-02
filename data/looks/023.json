@@ -1,0 +1,104 @@
+{
+  "id": "023",
+  "date": "2026-11-02",
+  "season": "겨울",
+  "title": "후암동 골목에서, 아이보리 무스탕 입고",
+  "headline": "후암동 골목에서,\n아이보리 무스탕 입고",
+  "summary": "아이보리 테디 무스탕에 그레이 플리츠 미니, 니하이 부츠와 퀼팅백. 후암동 골목 아이보리 × 그레이 룩.",
+  "description": "후암동 골목에서, 아이보리 테디 무스탕에 그레이 플리츠 미니를 입고 서 있던 날. 연회색 반폴라 니트, 블랙 니하이 통굽 부츠, 아이보리 퀼팅 체인백, 실버 링으로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "데이트",
+    "오후"
+  ],
+  "palette": [
+    [
+      "아이보리",
+      "#f2ebe3"
+    ],
+    [
+      "그레이",
+      "#9a9a9a"
+    ],
+    [
+      "블랙",
+      "#1a1a1a"
+    ]
+  ],
+  "cover": "img/ep023/1-s.webp",
+  "sets": [
+    {
+      "name": "아이보리 × 그레이",
+      "mood": "후암동 골목에서, 아이보리 무스탕 입고",
+      "image": "img/ep023/1.webp",
+      "alt": "후암동 골목에서 아이보리 무스탕과 그레이 플리츠를 입고 서 있는 윤서",
+      "loopMp4": "img/ep023/clip.mp4",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "테디 무스탕 퍼자켓",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/jdeztgr",
+          "similar": true
+        },
+        {
+          "cat": "상의",
+          "name": "캐시 반폴라 니트",
+          "color": "연회색",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/c772jbr",
+          "similar": true
+        },
+        {
+          "cat": "스커트",
+          "name": "플리츠 미니 니트스커트",
+          "color": "그레이",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/y1ukqbv",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "3버클 니하이 롱부츠",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/tasez25",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "퀼팅 체인 미니크로스백",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/x23a2qm",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "실버 원터치 링",
+          "color": "10mm",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/7mqlr6i",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep023/1b.webp",
+          "alt": "서서 밝게 웃는 윤서"
+        },
+        {
+          "image": "img/ep023/1c.webp",
+          "alt": "걸어오며 웃는 윤서"
+        },
+        {
+          "image": "img/ep023/1d.webp",
+          "alt": "가까이서 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "451TsQIls1s"
+    }
+  ],
+  "instagram": ""
+}
