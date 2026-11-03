@@ -1,0 +1,101 @@
+{
+  "id": "025",
+  "date": "2026-11-04",
+  "season": "가을",
+  "title": "청담 거리에서, 그레이 코트 입고",
+  "headline": "청담 거리에서,\n그레이 코트 입고",
+  "summary": "그레이 핸드메이드 롱코트에 아이보리 캐시미어, 차콜 슬랙스. 청담 갤러리거리 그레이 × 아이보리 룩.",
+  "description": "청담 갤러리거리에서, 그레이 핸드메이드 롱코트에 아이보리 캐시미어 니트를 입고 서 있던 날. 차콜 투핀턱 와이드 슬랙스, 블랙 페니 로퍼, 블랙 래더 미니 보스턴백으로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "미니멀",
+    "브런치"
+  ],
+  "palette": [
+    [
+      "그레이",
+      "#8a8a8a"
+    ],
+    [
+      "아이보리",
+      "#f5f0e8"
+    ],
+    [
+      "차콜",
+      "#3a3a3a"
+    ]
+  ],
+  "cover": "img/ep025/1-s.webp",
+  "sets": [
+    {
+      "name": "그레이 × 아이보리",
+      "mood": "청담 거리에서, 그레이 코트 입고",
+      "image": "img/ep025/1.webp",
+      "alt": "청담 거리에서 그레이 롱코트를 입고 서 있는 윤서",
+      "loopMp4": "img/ep025/clip.mp4",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "핸드메이드 롱코트",
+          "color": "그레이",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/ixctd4i",
+          "similar": true,
+          "price": 218000
+        },
+        {
+          "cat": "상의",
+          "name": "라운드 캐시미어 니트",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/0rktyjk",
+          "similar": true,
+          "price": 19500
+        },
+        {
+          "cat": "하의",
+          "name": "투핀턱 와이드 슬랙스",
+          "color": "차콜",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/fyq0qic",
+          "similar": true,
+          "price": 34370
+        },
+        {
+          "cat": "슈즈",
+          "name": "클래식 페니 로퍼",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/2lok9it",
+          "similar": true,
+          "price": 26410
+        },
+        {
+          "cat": "가방",
+          "name": "래더 미니 보스턴백",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/1wt4io7",
+          "similar": true,
+          "price": 15900
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep025/1b.webp",
+          "alt": "돌아보며 웃는 윤서"
+        },
+        {
+          "image": "img/ep025/1c.webp",
+          "alt": "걸어오며 웃는 윤서"
+        },
+        {
+          "image": "img/ep025/1d.webp",
+          "alt": "가까이서 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    }
+  ],
+  "instagram": ""
+}
