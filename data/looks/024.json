@@ -1,0 +1,96 @@
+{
+  "id": "024",
+  "date": "2026-11-02",
+  "season": "가을",
+  "title": "선릉 로비에서, 핑크 원피스 입고",
+  "headline": "선릉 로비에서,\n핑크 원피스 입고",
+  "summary": "크림 셔츠에 핑크베이지 플레어 원피스, 블랙 메리제인과 아이보리 미니토트. 선릉 로비 핑크 × 크림 룩.",
+  "description": "선릉 웨딩홀 로비에서, 크림 셔츠 배색 핑크베이지 플레어 원피스를 입고 서 있던 날. 블랙 벨벳 메리제인, 아이보리 셔링 미니토트, 진주 목걸이와 진주 귀걸이로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "하객",
+    "데이트"
+  ],
+  "palette": [
+    [
+      "핑크베이지",
+      "#e8c4b8"
+    ],
+    [
+      "크림",
+      "#f5f0e8"
+    ],
+    [
+      "블랙",
+      "#1a1a1a"
+    ]
+  ],
+  "cover": "img/ep024/1-s.webp",
+  "sets": [
+    {
+      "name": "핑크베이지 × 크림",
+      "mood": "선릉 로비에서, 핑크 원피스 입고",
+      "image": "img/ep024/1.webp",
+      "alt": "선릉 로비에서 핑크베이지 원피스를 입고 서 있는 윤서",
+      "loopMp4": "img/ep024/clip.mp4",
+      "items": [
+        {
+          "cat": "원피스",
+          "name": "셔츠 배색 플레어 원피스",
+          "color": "핑크베이지",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/ru6c33v",
+          "similar": true
+        },
+        {
+          "cat": "슈즈",
+          "name": "벨벳 메리제인 플랫",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/u6vyx3o",
+          "similar": true
+        },
+        {
+          "cat": "가방",
+          "name": "셔링 미니 토트",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/hkb5hoo",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "진주 은목걸이",
+          "color": "실버",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/780xc1f",
+          "similar": true
+        },
+        {
+          "cat": "주얼리",
+          "name": "진주 귀걸이",
+          "color": "8mm",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/nr4b3pc",
+          "similar": true
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep024/1b.webp",
+          "alt": "로비에서 밝게 웃는 윤서"
+        },
+        {
+          "image": "img/ep024/1c.webp",
+          "alt": "걸어오며 웃는 윤서"
+        },
+        {
+          "image": "img/ep024/1d.webp",
+          "alt": "가까이서 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "vrc5rChV9Go"
+    }
+  ],
+  "instagram": ""
+}
