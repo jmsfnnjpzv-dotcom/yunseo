@@ -1,0 +1,92 @@
+{
+  "id": "026",
+  "date": "2026-11-04",
+  "season": "가을",
+  "title": "건대 골목에서, 검정 후드집업 입고",
+  "headline": "건대 골목에서,\n검정 후드집업 입고",
+  "summary": "검정 양기모 후드집업에 딥블랙 와이드 데님, 플랫폼 스니커즈. 건대입구 골목 올블랙 스트릿 룩.",
+  "description": "건대입구 골목에서, 검정 양기모 후드집업을 입고 친구 만나러 가던 날. 딥블랙 워싱 와이드 데님, 블랙 플랫폼 스니커즈, 블랙 미니 스퀘어 토트로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "스트릿",
+    "친구약속"
+  ],
+  "palette": [
+    [
+      "블랙",
+      "#111111"
+    ],
+    [
+      "흑청",
+      "#2b2d33"
+    ],
+    [
+      "차콜",
+      "#3a3a3a"
+    ]
+  ],
+  "cover": "img/ep026/1-s.webp",
+  "sets": [
+    {
+      "name": "올블랙 스트릿",
+      "mood": "건대 골목에서, 검정 후드집업 입고",
+      "image": "img/ep026/1.webp",
+      "alt": "건대 골목에서 검정 후드집업을 입고 서 있는 윤서",
+      "loopMp4": "img/ep026/clip.mp4",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "양기모 후드집업",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/eahoteq",
+          "similar": true,
+          "price": 39790
+        },
+        {
+          "cat": "하의",
+          "name": "딥블랙 워싱 와이드 데님",
+          "color": "흑청",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/nenne8k",
+          "similar": true,
+          "price": 24830
+        },
+        {
+          "cat": "슈즈",
+          "name": "플랫폼 통굽 스니커즈",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/gq315pd",
+          "similar": true,
+          "price": 31500
+        },
+        {
+          "cat": "가방",
+          "name": "쁘띠미니 스퀘어 토트백",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/ryyiauf",
+          "similar": true,
+          "price": 11210
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep026/1b.webp",
+          "alt": "한 바퀴 돌며 웃는 윤서"
+        },
+        {
+          "image": "img/ep026/1c.webp",
+          "alt": "걸어오며 웃는 윤서"
+        },
+        {
+          "image": "img/ep026/1d.webp",
+          "alt": "가까이서 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    }
+  ],
+  "instagram": ""
+}
