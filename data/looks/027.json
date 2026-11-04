@@ -1,0 +1,101 @@
+{
+  "id": "027",
+  "date": "2026-11-05",
+  "season": "가을",
+  "title": "이대 캠퍼스에서, 네이비 더플코트 입고",
+  "headline": "이대 캠퍼스에서,\n네이비 더플코트 입고",
+  "summary": "네이비 후드 더플코트에 아이보리 브이넥 니트, 연그레이 슬랙스. 이대 캠퍼스 클래식 룩.",
+  "description": "이대 캠퍼스 은행잎 길에서, 네이비 후드 더플코트를 입고 수업 가던 날. 아이보리 울 브이넥 니트, 연그레이 투핀턱 와이드 슬랙스, 블랙 페니 로퍼, 아이보리 숄더백으로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "클래식",
+    "캠퍼스"
+  ],
+  "palette": [
+    [
+      "네이비",
+      "#1f2a44"
+    ],
+    [
+      "아이보리",
+      "#f5f0e8"
+    ],
+    [
+      "연그레이",
+      "#b8b8b8"
+    ]
+  ],
+  "cover": "img/ep027/1-s.webp",
+  "sets": [
+    {
+      "name": "네이비 캠퍼스 클래식",
+      "mood": "이대 캠퍼스에서, 네이비 더플코트 입고",
+      "image": "img/ep027/1.webp",
+      "alt": "이대 캠퍼스에서 네이비 더플코트를 입고 서 있는 윤서",
+      "loopMp4": "img/ep027/clip.mp4",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "떡볶이 후드 더플 롱코트",
+          "color": "네이비",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/ec9dxe3",
+          "similar": true,
+          "price": 76910
+        },
+        {
+          "cat": "상의",
+          "name": "울 루즈핏 브이넥 니트",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/hdjflxf",
+          "similar": true,
+          "price": 20610
+        },
+        {
+          "cat": "하의",
+          "name": "투핀턱 와이드 슬랙스",
+          "color": "연그레이",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/fyq0qic",
+          "similar": true,
+          "price": 34370
+        },
+        {
+          "cat": "슈즈",
+          "name": "소가죽 스퀘어 페니 로퍼",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/58hxfnw",
+          "similar": true,
+          "price": 23820
+        },
+        {
+          "cat": "가방",
+          "name": "롱핸들 빅스퀘어 토트 숄더백",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/60n900d",
+          "similar": true,
+          "price": 17860
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep027/1b.webp",
+          "alt": "한 바퀴 돌며 웃는 윤서"
+        },
+        {
+          "image": "img/ep027/1c.webp",
+          "alt": "가까이 걸어와 웃는 윤서"
+        },
+        {
+          "image": "img/ep027/1d.webp",
+          "alt": "가까이서 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    }
+  ],
+  "instagram": ""
+}
