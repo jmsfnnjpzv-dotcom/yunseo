@@ -1,0 +1,101 @@
+{
+  "id": "028",
+  "date": "2026-11-05",
+  "season": "가을",
+  "title": "효창공원에서, 블랙 패딩조끼 입고",
+  "headline": "효창공원에서,\n블랙 패딩조끼 입고",
+  "summary": "블랙 스트링 패딩조끼에 그레이 후드집업, 차콜 파라슈트. 효창공원 산책로 블랙 × 그레이 고프 룩.",
+  "description": "효창공원 산책로에서, 그레이 후드집업 위에 블랙 스트링 패딩조끼를 겹쳐 입고 걷던 날. 차콜 파라슈트 와이드 팬츠, 올블랙 플랫폼 스니커즈, 블랙 나일론 메신저백으로 맞춰 봤어요. 사진 속 아이템과 비슷한 상품이 섞여 있어요.",
+  "tags": [
+    "고프코어",
+    "주말산책"
+  ],
+  "palette": [
+    [
+      "블랙",
+      "#111111"
+    ],
+    [
+      "그레이",
+      "#9a9a9a"
+    ],
+    [
+      "차콜",
+      "#3a3a3a"
+    ]
+  ],
+  "cover": "img/ep028/1-s.webp",
+  "sets": [
+    {
+      "name": "블랙 × 그레이 고프",
+      "mood": "효창공원에서, 블랙 패딩조끼 입고",
+      "image": "img/ep028/1.webp",
+      "alt": "효창공원에서 블랙 패딩조끼를 입고 서 있는 윤서",
+      "loopMp4": "img/ep028/clip.mp4",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "스트링 조끼 패딩",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/ixl35bp",
+          "similar": true,
+          "price": 44510
+        },
+        {
+          "cat": "상의",
+          "name": "기모 후드 집업",
+          "color": "그레이",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/490zsak",
+          "similar": true,
+          "price": 37700
+        },
+        {
+          "cat": "하의",
+          "name": "밴딩 핀턱 와이드 팬츠",
+          "color": "차콜",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/22pn57a",
+          "similar": true,
+          "price": 30490
+        },
+        {
+          "cat": "슈즈",
+          "name": "캔버스 플랫폼 스니커즈",
+          "color": "올블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/gv52nem",
+          "similar": true,
+          "price": 49400
+        },
+        {
+          "cat": "가방",
+          "name": "나일론 메신저 크로스백",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/pij47gj",
+          "similar": true,
+          "price": 15960
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep028/1b.webp",
+          "alt": "한 바퀴 돌며 웃는 윤서"
+        },
+        {
+          "image": "img/ep028/1c.webp",
+          "alt": "걸어오며 웃는 윤서"
+        },
+        {
+          "image": "img/ep028/1d.webp",
+          "alt": "가까이서 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    }
+  ],
+  "instagram": ""
+}
