@@ -1,0 +1,100 @@
+{
+  "id": "030",
+  "date": "2026-11-06",
+  "season": "가을",
+  "title": "남산 둘레길에서, 초코 후리스 입고",
+  "headline": "남산 둘레길에서,\n초코 후리스 입고",
+  "summary": "초코브라운 후리스와 베이지 카고에 킨 재스퍼를 더한 남산 둘레길 고프코어 산책룩.",
+  "description": "남산 둘레길을 배경으로 구성한 고프코어 주말 산책룩. 소매 흰 라인 초코브라운 후리스 집업에 베이지 와이드 카고, 탄 스웨이드 킨 재스퍼를 매치했어요. 블랙 나일론 스트링 크로스백과 크림 볼캡으로 마무리했어요. AI로 만든 가상인물 윤서의 이미지·영상입니다.",
+  "tags": [
+    "고프코어",
+    "주말산책"
+  ],
+  "palette": [
+    [
+      "브라운",
+      "#5c3a2e"
+    ],
+    [
+      "베이지",
+      "#d4c4a8"
+    ],
+    [
+      "크림",
+      "#f2ebe0"
+    ]
+  ],
+  "cover": "img/ep030/1-s.webp",
+  "sets": [
+    {
+      "name": "브라운 × 베이지",
+      "mood": "남산 둘레길에서, 초코 후리스 입고",
+      "image": "img/ep030/1.webp",
+      "alt": "남산 둘레길에서 초코브라운 후리스를 입은 가상인물 윤서",
+      "loopMp4": "img/ep030/clip.mp4",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "덤블 배색라인 폴라폴리스 투웨이 후리스 집업",
+          "color": "브라운",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/hinfkwi",
+          "similar": false,
+          "price": 32200
+        },
+        {
+          "cat": "하의",
+          "name": "카야 스트링 와이드핏 카고 팬츠",
+          "color": "베이지",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/nqk3nrt",
+          "similar": false,
+          "price": 22060
+        },
+        {
+          "cat": "슈즈",
+          "name": "킨 재스퍼",
+          "color": "탄/베이지+레드끈",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/n60wzk6",
+          "similar": false,
+          "price": 102400
+        },
+        {
+          "cat": "가방",
+          "name": "나일론 카고 스트링 포켓 보부상 크로스백",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/psu31qx",
+          "similar": false,
+          "price": 15960
+        },
+        {
+          "cat": "모자",
+          "name": "무센트 시그니처 볼캡",
+          "color": "크림",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/p1ag8ss",
+          "similar": false,
+          "price": 22730
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep030/1b.webp",
+          "alt": "캡 챙을 살짝 만지는 윤서"
+        },
+        {
+          "image": "img/ep030/1c.webp",
+          "alt": "한 바퀴 도는 윤서"
+        },
+        {
+          "image": "img/ep030/1d.webp",
+          "alt": "카메라를 가리키며 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "XWj3QyhEK7Y"
+    }
+  ]
+}
