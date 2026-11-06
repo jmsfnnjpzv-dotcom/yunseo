@@ -1,0 +1,110 @@
+{
+  "id": "031",
+  "date": "2026-11-06",
+  "season": "가을",
+  "title": "홍대 골목에서, 데님 양털 패딩 입고",
+  "headline": "홍대 골목에서,\n데님 양털 패딩 입고",
+  "summary": "연청 데님 양털 후드패딩과 멜란지그레이 스웻에 청키 슈즈를 더한 홍대 골목 스트릿룩.",
+  "description": "홍대 골목을 배경으로 구성한 스트릿 친구약속룩. 오버핏 연청 데님 양털 후드패딩에 블랙 골지 목폴라, 멜란지그레이 와이드 스웻팬츠를 매치했어요. 화이트아이보리 청키 슈즈와 블랙 메쉬 셔링백, 스터드 비니로 마무리했어요. AI로 만든 가상인물 윤서의 이미지·영상입니다.",
+  "tags": [
+    "스트릿",
+    "친구약속"
+  ],
+  "palette": [
+    [
+      "데님",
+      "#6b8cae"
+    ],
+    [
+      "그레이",
+      "#9a9a9a"
+    ],
+    [
+      "블랙",
+      "#1a1a1a"
+    ]
+  ],
+  "cover": "img/ep031/1-s.webp",
+  "sets": [
+    {
+      "name": "데님 × 그레이",
+      "mood": "홍대 골목에서, 데님 양털 패딩 입고",
+      "image": "img/ep031/1.webp",
+      "alt": "홍대 골목에서 데님 양털 패딩을 입은 가상인물 윤서",
+      "loopMp4": "img/ep031/clip.mp4",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "투웨이 데님 양털 후드 패딩점퍼",
+          "color": "데님",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/b6qjksg",
+          "similar": false,
+          "price": 55850
+        },
+        {
+          "cat": "상의",
+          "name": "젠디 슬림핏 골지 목폴라",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/8pbpyxy",
+          "similar": false,
+          "price": 17100
+        },
+        {
+          "cat": "하의",
+          "name": "B-BASIC 헤비스웨트 와이드 투웨이 팬츠",
+          "color": "멜란지그레이",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/l140p8p",
+          "similar": false,
+          "price": 52000
+        },
+        {
+          "cat": "슈즈",
+          "name": "아키클래식 데이트 어글리슈즈",
+          "color": "화이트아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/hfpcs3v",
+          "similar": false,
+          "price": 63120
+        },
+        {
+          "cat": "가방",
+          "name": "나일론 메쉬 포켓 셔링 크로스 숄더백",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/yhmwokr",
+          "similar": false,
+          "price": 16800
+        },
+        {
+          "cat": "모자",
+          "name": "큐빅 스터드 비니",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/koyv0a0",
+          "similar": false,
+          "price": 11580
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep031/1b.webp",
+          "alt": "비니를 눌러 쓰는 윤서"
+        },
+        {
+          "image": "img/ep031/1c.webp",
+          "alt": "한 바퀴 도는 윤서"
+        },
+        {
+          "image": "img/ep031/1d.webp",
+          "alt": "카메라를 가리키며 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "lXxn7fUF0lI"
+    }
+  ],
+  "instagram": ""
+}
