@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-06",
+  "season": "가을",
+  "summary": "아이보리 하프코트와 카키 브이넥 니트에 버터베이지 슬랙스를 더한 광화문 미니멀 출근룩.",
+  "description": "광화문을 배경으로 구성한 미니멀 출근룩. 아이보리 반하이 울 하프코트에 카키 브이넥 니트, 버터베이지 핀턱 슬랙스를 매치했어요. 브라운 페니 로퍼와 스웨이드커피 셔링 숄더백으로 마무리했어요. AI로 만든 가상인물 윤서의 이미지·영상입니다.",
+  "tags": [
+    "미니멀",
+    "출근룩"
+  ],
+  "palette": [
+    [
+      "아이보리",
+      "#eee6d8"
+    ],
+    [
+      "카키",
+      "#73734e"
+    ],
+    [
+      "브라운",
+      "#624938"
+    ]
+  ],
+  "id": "029",
+  "title": "광화문 거리에서, 아이보리 코트 입고",
+  "headline": "광화문 거리에서,\n아이보리 코트 입고",
+  "cover": "img/ep029/1-s.webp",
+  "sets": [
+    {
+      "name": "아이보리 × 카키",
+      "mood": "광화문 미니멀 출근룩",
+      "image": "img/ep029/1.webp",
+      "alt": "광화문을 배경으로 아이보리 하프코트를 입은 가상인물 윤서",
+      "loopMp4": "img/ep029/clip.mp4",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "샤를린 반하이 울 하프코트",
+          "color": "Ivory",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/jjp290o",
+          "similar": false,
+          "price": 108100
+        },
+        {
+          "cat": "상의",
+          "name": "소피 브이넥 니트",
+          "color": "khaki",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/e4ryqb5",
+          "similar": false,
+          "price": 25000
+        },
+        {
+          "cat": "하의",
+          "name": "WONT 어텀 핀턱 슬랙스",
+          "color": "버터베이지",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/gjbtsuh",
+          "similar": false,
+          "price": 46550
+        },
+        {
+          "cat": "슈즈",
+          "name": "소가죽 스퀘어 페니 로퍼",
+          "color": "브라운",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/bqujtqi",
+          "similar": false,
+          "price": 24740
+        },
+        {
+          "cat": "가방",
+          "name": "셔링 스웨이드 숄더백",
+          "color": "스웨이드커피",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/9qr6syh",
+          "similar": false,
+          "price": 17520
+        }
+      ],
+      "extra": [
+        {
+          "image": "img/ep029/1b.webp",
+          "alt": "한 바퀴 도는 윤서"
+        },
+        {
+          "image": "img/ep029/1c.webp",
+          "alt": "카메라를 향해 걸어오는 윤서"
+        },
+        {
+          "image": "img/ep029/1d.webp",
+          "alt": "가까이서 웃는 윤서"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "NSy3IZhqQQ4"
+    }
+  ],
+  "instagram": ""
+}
