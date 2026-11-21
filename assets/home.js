@@ -93,7 +93,7 @@ function looksOf(ep, pages) {
     const short = !!(ytId(s.youtubeId) || (i === 0 && ytId(ep.youtubeId)));
     return {
       ep, s, items, keys, short, id: `${ep.id}-${i + 1}`,
-      badge: [multi ? s.name.split('·')[0].trim() : '', short ? '▶︎' : ''].filter(Boolean).join(' '), // 번호·날짜는 화면에 쓰지 않는다
+      badge: [multi && s.name.includes('·') ? s.name.split('·')[0].trim() : '', short ? '▶︎' : ''].filter(Boolean).join(' '), // 번호·날짜는 화면에 쓰지 않는다
       title: s.name.split('·').pop().trim(), // 상세에서 사진 아래 붙는 룩 이름과 같게
       href: `${page}#set-${i + 1}`, // 사진·이름 → 그 룩의 사진
       itemsHref: `${page}#${i === 0 ? 'items' : `items-${i + 1}`}`, // '아이템 N개 보기' → 그 룩의 아이템 목록

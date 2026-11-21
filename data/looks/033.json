@@ -27,7 +27,7 @@
   "cover": "img/ep033/1-s.webp",
   "sets": [
     {
-      "name": "Look 1 · 블랙 트위드",
+      "name": "블랙 트위드",
       "mood": "블랙 트위드 원피스에 앵클스트랩 힐",
       "tags": [
         "연말"
@@ -66,11 +66,11 @@
           "goods_id": "6080692"
         }
       ],
-      "reel": "",
+      "reel": "https://www.instagram.com/ootw.yunseo/reel/Df_fUj8vvFD/",
       "youtubeId": "cLYHnIFBy74"
     },
     {
-      "name": "Look 2 · 브라운 × 블랙",
+      "name": "브라운 × 블랙",
       "mood": "브라운 폴라 머메이드 롱원피스",
       "tags": [
         "연말"
@@ -103,7 +103,7 @@
       "youtubeId": ""
     },
     {
-      "name": "Look 3 · 와인 × 블랙",
+      "name": "와인 × 블랙",
       "mood": "와인 오프숄더 셔링 미니원피스에 롱부츠",
       "tags": [
         "연말",
@@ -147,7 +147,7 @@
       "youtubeId": ""
     },
     {
-      "name": "Look 4 · 아이보리 × 블랙",
+      "name": "아이보리 × 블랙",
       "mood": "아이보리 꽈배기 롱원피스에 블랙 스틸레토",
       "tags": [
         "연말"
@@ -180,7 +180,7 @@
       "youtubeId": ""
     },
     {
-      "name": "Look 5 · 베이지 × 블랙",
+      "name": "베이지 × 블랙",
       "mood": "베이지 플리츠 니트 롱원피스에 슬링백",
       "tags": [
         "연말"
@@ -213,7 +213,7 @@
       "youtubeId": ""
     },
     {
-      "name": "Look 6 · 아이보리 코트 × 블랙",
+      "name": "아이보리 코트 × 블랙",
       "mood": "아이보리 하이넥 하프코트에 블랙 미니원피스",
       "tags": [
         "연말"
@@ -266,7 +266,7 @@
       "youtubeId": ""
     },
     {
-      "name": "Look 7 · 블랙 벨벳",
+      "name": "블랙 벨벳",
       "mood": "블랙 벨벳 셔링 미니원피스",
       "tags": [
         "연말",
@@ -309,5 +309,6 @@
       "reel": "",
       "youtubeId": ""
     }
-  ]
+  ],
+  "instagram": "https://www.instagram.com/ootw.yunseo/p/Df_fqydFPXi/"
 }
