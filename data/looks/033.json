@@ -1,0 +1,313 @@
+{
+  "id": "033",
+  "date": "2026-11-21",
+  "season": "겨울",
+  "title": "연말 모임엔 이렇게 입어보세요",
+  "headline": "연말 모임엔\n이렇게 입어보세요",
+  "summary": "송년회·크리스마스 모임에 입기 좋은 원피스룩 7벌.",
+  "description": "송년회랑 크리스마스 약속 앞두고 원피스로만 7벌 골랐어요. 블랙 트위드 원피스와 와인 오프숄더 미니, 아이보리 꽈배기 롱원피스, 블랙 벨벳 미니까지 모아 두었어요. 몇 번이 제일 마음에 드세요? AI로 만든 가상인물 윤서의 이미지·영상입니다. 옷은 실제 판매 중인 에이블리 상품이에요.",
+  "tags": [
+    "연말",
+    "파티"
+  ],
+  "palette": [
+    [
+      "블랙",
+      "#2f2b29"
+    ],
+    [
+      "와인",
+      "#7d2638"
+    ],
+    [
+      "아이보리",
+      "#f4efe6"
+    ]
+  ],
+  "cover": "img/ep033/1-s.webp",
+  "sets": [
+    {
+      "name": "Look 1 · 블랙 트위드",
+      "mood": "블랙 트위드 원피스에 앵클스트랩 힐",
+      "tags": [
+        "연말"
+      ],
+      "image": "img/ep033/1.webp",
+      "alt": "베이지 커튼 앞에서 블랙 트위드 원피스와 블랙 스타킹, 블랙 앵클스트랩 힐을 입고 거울 셀카를 찍는 가상인물 윤서",
+      "items": [
+        {
+          "cat": "원피스",
+          "name": "아델 부케 트위드 A라인 원피스",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/l3v79xr",
+          "similar": false,
+          "price": 66950,
+          "goods_id": "12390124"
+        },
+        {
+          "cat": "스타킹",
+          "name": "제이닝 20D 쫀쫀 스타킹",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/laxhejv",
+          "similar": false,
+          "price": 5600,
+          "goods_id": "16228743"
+        },
+        {
+          "cat": "슈즈",
+          "name": "오엔드 스틸레토 메리제인힐 6.5cm",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/a2a1vbo",
+          "similar": false,
+          "price": 22900,
+          "goods_id": "6080692"
+        }
+      ],
+      "reel": "",
+      "youtubeId": "cLYHnIFBy74"
+    },
+    {
+      "name": "Look 2 · 브라운 × 블랙",
+      "mood": "브라운 폴라 머메이드 롱원피스",
+      "tags": [
+        "연말"
+      ],
+      "image": "img/ep033/2.webp",
+      "alt": "베이지 커튼 앞에서 브라운 폴라 머메이드 롱원피스와 블랙 앵클부츠을 입고 거울 셀카를 찍는 가상인물 윤서",
+      "items": [
+        {
+          "cat": "원피스",
+          "name": "실루엣 폴라 원피스",
+          "color": "브라운",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/19mkevw",
+          "similar": false,
+          "price": 23810,
+          "goods_id": "2384142"
+        },
+        {
+          "cat": "슈즈",
+          "name": "빌리 스웨이드 삭스 앵클부츠 5cm",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/76lizco",
+          "similar": false,
+          "price": 16900,
+          "goods_id": "1325314"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    },
+    {
+      "name": "Look 3 · 와인 × 블랙",
+      "mood": "와인 오프숄더 셔링 미니원피스에 롱부츠",
+      "tags": [
+        "연말",
+        "파티"
+      ],
+      "image": "img/ep033/3.webp",
+      "alt": "베이지 커튼 앞에서 와인 오프숄더 셔링 미니원피스와 블랙 롱부츠을 입고 거울 셀카를 찍는 가상인물 윤서",
+      "items": [
+        {
+          "cat": "원피스",
+          "name": "차밍 초커 셔링 오프숄더 미니 원피스",
+          "color": "와인",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/ye5i3b9",
+          "similar": false,
+          "price": 23990,
+          "goods_id": "30608893"
+        },
+        {
+          "cat": "스타킹",
+          "name": "제이닝 20D 쫀쫀 스타킹",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/laxhejv",
+          "similar": false,
+          "price": 5600,
+          "goods_id": "16228743"
+        },
+        {
+          "cat": "슈즈",
+          "name": "심플 슬림 롱부츠 5cm 옆지퍼",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/tgkzmuc",
+          "similar": false,
+          "price": 28900,
+          "goods_id": "4969766"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    },
+    {
+      "name": "Look 4 · 아이보리 × 블랙",
+      "mood": "아이보리 꽈배기 롱원피스에 블랙 스틸레토",
+      "tags": [
+        "연말"
+      ],
+      "image": "img/ep033/4.webp",
+      "alt": "베이지 커튼 앞에서 아이보리 꽈배기 롱원피스와 블랙 스틸레토 펌프스를 입고 거울 셀카를 찍는 가상인물 윤서",
+      "items": [
+        {
+          "cat": "원피스",
+          "name": "꽈배기 브이넥 슬림 니트 롱 원피스",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/r96r8lu",
+          "similar": false,
+          "price": 40900,
+          "goods_id": "1849940"
+        },
+        {
+          "cat": "슈즈",
+          "name": "셀힐 스웨이드 스틸레토 펌프스",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/99h67td",
+          "similar": false,
+          "price": 22410,
+          "goods_id": "28736613"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    },
+    {
+      "name": "Look 5 · 베이지 × 블랙",
+      "mood": "베이지 플리츠 니트 롱원피스에 슬링백",
+      "tags": [
+        "연말"
+      ],
+      "image": "img/ep033/5.webp",
+      "alt": "베이지 커튼 앞에서 베이지 플리츠 니트 벨트 롱원피스와 블랙 슬링백을 입고 거울 셀카를 찍는 가상인물 윤서",
+      "items": [
+        {
+          "cat": "원피스",
+          "name": "캐시미어 플리츠 니트 벨트 롱 원피스",
+          "color": "베이지",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/7n9ftty",
+          "similar": false,
+          "price": 32800,
+          "goods_id": "3160483"
+        },
+        {
+          "cat": "슈즈",
+          "name": "메리제인 슬링백 힐",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/zbvssec",
+          "similar": false,
+          "price": 18090,
+          "goods_id": "38658257"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    },
+    {
+      "name": "Look 6 · 아이보리 코트 × 블랙",
+      "mood": "아이보리 하이넥 하프코트에 블랙 미니원피스",
+      "tags": [
+        "연말"
+      ],
+      "image": "img/ep033/6.webp",
+      "alt": "베이지 커튼 앞에서 아이보리 하이넥 하프코트와 블랙 미니원피스, 블랙 버클 롱부츠을 입고 거울 셀카를 찍는 가상인물 윤서",
+      "items": [
+        {
+          "cat": "아우터",
+          "name": "다니엘 하이넥 더블버튼 하프 코트",
+          "color": "아이보리",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/nnmnhby",
+          "similar": false,
+          "price": 48570,
+          "goods_id": "76998604"
+        },
+        {
+          "cat": "원피스",
+          "name": "실루엣 폴라 원피스",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/19mkevw",
+          "similar": false,
+          "price": 23810,
+          "goods_id": "2384142"
+        },
+        {
+          "cat": "스타킹",
+          "name": "제이닝 20D 쫀쫀 스타킹",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/laxhejv",
+          "similar": false,
+          "price": 5600,
+          "goods_id": "16228743"
+        },
+        {
+          "cat": "슈즈",
+          "name": "더블 버클 스트랩 레더 롱부츠",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/u856f3t",
+          "similar": false,
+          "price": 28310,
+          "goods_id": "64947689"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    },
+    {
+      "name": "Look 7 · 블랙 벨벳",
+      "mood": "블랙 벨벳 셔링 미니원피스",
+      "tags": [
+        "연말",
+        "파티"
+      ],
+      "image": "img/ep033/7.webp",
+      "alt": "베이지 커튼 앞에서 블랙 벨벳 셔링 미니원피스와 블랙 스타킹, 블랙 펌프스을 입고 거울 셀카를 찍는 가상인물 윤서",
+      "items": [
+        {
+          "cat": "원피스",
+          "name": "벨벳 셔링 파티 미니원피스",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/siw24vw",
+          "similar": false,
+          "price": 34200,
+          "goods_id": "1593691"
+        },
+        {
+          "cat": "스타킹",
+          "name": "제이닝 20D 쫀쫀 스타킹",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/laxhejv",
+          "similar": false,
+          "price": 5600,
+          "goods_id": "16228743"
+        },
+        {
+          "cat": "슈즈",
+          "name": "셀힐 스웨이드 스틸레토 펌프스",
+          "color": "블랙",
+          "shop": "에이블리",
+          "url": "https://applink.a-bly.com/99h67td",
+          "similar": false,
+          "price": 22410,
+          "goods_id": "28736613"
+        }
+      ],
+      "reel": "",
+      "youtubeId": ""
+    }
+  ]
+}
